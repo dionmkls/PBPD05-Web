@@ -4,8 +4,8 @@ Aplikasi Terkait Pandemi Covid-19
 
 ## nama-nama anggota kelompok
 
-Dionisius Mikael Sutanto
-Dimas Tri Kurniawan
+- Dionisius Mikael Sutanto
+- Dimas Tri Kurniawan
 Prinata Rakha Santoso
 Qosim Ariqoh Daffa
 Muhammad Rafif Priyo Waskito
