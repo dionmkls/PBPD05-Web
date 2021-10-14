@@ -22,15 +22,47 @@ Sebuah website yang menyediakan informasi terkait lokasi fasilitas kesehatan, in
 
 ## Daftar modul yang akan diimplementasikan
 
-- Lokasi fasilitas kesehatan (ruang ICU/kamar yg available di RS, vaksin, oksigen), setidaknya jabodetabek
-    - url maps
-    - alamat lengkap
-    - nomor telepon
-- Tabel pasien covid per bulan 
-    - menyesuaikan di https://data.covid19.go.id/public/api/update.json
-- Statistik vaksinasi https://www.bing.com/search?q=covid+information&qs=n&form=QBRE&sp=-1&pq=covid+information&sc=8-17&sk=&cvid=6D5D45F5F6B94CE0A546BC57CF61061A
-- Halaman buat forum terbuka yang berisi pengalaman dan cerita dari pasien covid.
-- Form untuk ngasih pengalaman dan cerita dari pasien yg udh sembuh
+- lokasi ruang ICU/kamar yg available di RS, setidaknya jabodetabek (Qosim)
+    - model:
+        - url maps
+        - alamat lengkap
+        - nomor telepon
+    - form buat masukin datanya
+- lokasi tempat vaksin, setidaknya jabodetabek (Rakha)
+    - model:
+        - url maps
+        - alamat lengkap
+        - nomor telepon
+        - jenis vaksin yang tersedia
+        - syarat peserta
+    - form buat masukin datanya
+- lokasi tempat oksigen, setidaknya jabodetabek (Dimas)
+    - model:
+        - url maps
+        - alamat lengkap
+        - nomor telepon
+    - form buat masukin datanya
+- beranda (Amelia)
+    - definisi vaksin
+    - definisi covid-19
+    - foto ajakan vaksin
+    - Tabel pasien covid per bulan menyesuaikan di https://data.covid19.go.id/public/api/update.json
+    - Statistik vaksinasi https://www.bing.com/search?q=covid+information&qs=n&form=QBRE&sp=-1&pq=covid+information&sc=8-17&sk=&cvid=6D5D45F5F6B94CE0A546BC57CF61061A
+- pengalaman pasien (Rheina)
+    - Halaman buat forum terbuka yang berisi pengalaman dan cerita dari pasien covid.
+    - Form untuk ngasih pengalaman dan cerita dari pasien yg udh sembuh
+- lokasi tempat jual APD (Rafif)
+    - model:
+        - url maps
+        - lokasi/alamat lengkap
+        - nomor telepon
+        - link perusahaan
+    - form buat masukin datanya
+- FAQ/tanya jawab (Dion)
+    - model:
+        - pertanyaan
+        - jawaban
+    - form buat masukin datanya
 
 ## Persona
 
