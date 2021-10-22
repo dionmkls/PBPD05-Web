@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("index/", include(index_urls)),
     re_path(r"^$", index, name="index"),
-    path('vaksin', include(vaksin_urls)),
+    path('lokasi-vaksin', include(vaksin_urls)),
 ]

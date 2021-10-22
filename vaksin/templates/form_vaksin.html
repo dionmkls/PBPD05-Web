@@ -1,0 +1,44 @@
+{% load static %}
+<!-- {% include 'navbar.html' %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Lokasi Vaksin Baru</title>
+    <link rel="stylesheet" href="{% static 'rakha\style.css' %}">
+  </head>
+  <body>
+    <h1 id="header">Vaccine Form</h1>
+        <table align="center" class="myTable">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <tr>
+                    <td align="left">URL:</td>
+                    <td>{{ form.url }}</td>
+                </tr>
+                <tr>
+                    <td align="right">Alamat Lengkap:</td>
+                    <td>{{ form.alamat }}</td>
+                </tr>
+                <tr>
+                    <td align="left">Nomor Telepon:</td>
+                    <td>{{ form.nomorTelp }}</td>
+                </tr>
+                <tr>
+                    <td align="left">Jenis Vaksin:</td>
+                    <td>{{ form.jenis }}</td>
+                </tr>
+                <tr>
+                    <td align="left">Syarat Peserta:</td>
+                    <td>{{ form.syaratPeserta }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit">
+                    </td>
+                </tr>
+            </form>
+        </table>
+  </body>
+</html>
