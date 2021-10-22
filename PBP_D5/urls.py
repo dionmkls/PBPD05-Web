@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 from hello_world.views import index 
+
 import hello_world.urls as index_urls
+import vaksin.urls as vaksin_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("index/", include(index_urls)),
     re_path(r"^$", index, name="index"),
+    path('vaksin', include(vaksin_urls)),
 ]
