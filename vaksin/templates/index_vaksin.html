@@ -1,15 +1,101 @@
 {% load static %}
-<!-- {% include 'navbar.html' %} -->
+{% include 'navbar_vaksin.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
     <title>Lokasi Vaksin</title>
     <link rel="stylesheet" href="{% static 'rakha\style.css' %}">
   </head>
   <body>
+    <h1>Vaksinasi</h1>
+    <p>Dibawah ini adalah lokasi vaksinasi di Jabodetabek.</p>
+
+    <h2 align="center">Jakarta</h2>
+    <div class="container">
+      <div class="row">
+          <div class="col card">1</div>
+          <div class="col card">2</div>
+          <div class="col card">3</div>
+      </div>
+      <div class="row">
+          <div class="col card">4</div>
+          <div class="col card">5</div>
+          <div class="col card">6</div>
+      </div>
+    </div>
+    <h2 align="center">Bogor</h2>
+    <div class="container">
+      <div class="row">
+          <div class="col card">1</div>
+          <div class="col card">2</div>
+          <div class="col card">3</div>
+      </div>
+      <div class="row">
+          <div class="col card">4</div>
+          <div class="col card">5</div>
+          <div class="col card">6</div>
+      </div>
+    </div>
+    <h2 align="center">Depok</h2>
+    <div class="container">
+      <div class="row">
+          <div class="col card">1</div>
+          <div class="col card">2</div>
+          <div class="col card">3</div>
+      </div>
+      <div class="row">
+          <div class="col card">4</div>
+          <div class="col card">5</div>
+          <div class="col card">6</div>
+      </div>
+    </div>
+    <h2 align="center">Tangerang</h2>
+    <div class="container">
+      <div class="row">
+          <div class="col card">1</div>
+          <div class="col card">2</div>
+          <div class="col card">3</div>
+      </div>
+      <div class="row">
+          <div class="col card">4</div>
+          <div class="col card">5</div>
+          <div class="col card">6</div>
+      </div>
+    </div>
+    <h2 align="center">Bekasi</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col card">1</div>
+            <div class="col card">2</div>
+            <div class="col card">3</div>
+        </div>
+        <div class="row">
+            <div class="col card">4</div>
+            <div class="col card">5</div>
+            <div class="col card">6</div>
+        </div>
+    </div>
+
+    <br>
       {% for vaksin in vaksins %}
-        
+      <div class="card">
+        <h3 align="center">{{ vaksin.nama }}</h3>
+        <p>Alamat: {{ vaksin.alamat }}</p>        
+        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
+        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>   
+        <a href="{{ vaksin.url }}" id="buttonMaps">Google Maps</a>     
+      </div>
+      <br>
+    {% endfor %}
+
   </body>
 </html>

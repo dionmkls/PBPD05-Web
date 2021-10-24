@@ -1,5 +1,5 @@
 {% load static %}
-<!-- {% include 'navbar.html' %} -->
+{% include 'navbar_vaksin.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="{% static 'rakha\style.css' %}">
   </head>
   <body>
-    <h1 id="header">Vaccine Form</h1>
+      <br>
+    {% include 'navbar_form.html' %}
+    <h1 id="header">Jakarta Vaccine Form</h1>
         <table align="center" class="myTable">
             <form action="" method="POST">
                 {% csrf_token %}
+                <tr>
+                    <td align="left">Nama:</td>
+                    <td>{{ form.nama }}</td>
+                </tr>
                 <tr>
                     <td align="left">URL:</td>
                     <td>{{ form.url }}</td>
