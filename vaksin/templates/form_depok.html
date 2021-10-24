@@ -6,45 +6,38 @@
   <head>
     <meta charset="UTF-8" />
     <title>Form Lokasi Vaksin Baru</title>
-    <link rel="stylesheet" href="{% static 'rakha\style.css' %}">
+    <link rel="stylesheet" href="{% static 'rakha\style_form.css' %}">
   </head>
   <body>
     <br>
   {% include 'navbar_form.html' %}
+  <div class="cardFrom">
+    <div class="cardHeader">
     <h1 id="header">Depok Vaccine Form</h1>
-        <table align="center" class="myTable">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <tr>
-                    <td align="left">Nama:</td>
-                    <td>{{ form.nama }}</td>
-                </tr>
-                <tr>
-                    <td align="left">URL:</td>
-                    <td>{{ form.url }}</td>
-                </tr>
-                <tr>
-                    <td align="right">Alamat Lengkap:</td>
-                    <td>{{ form.alamat }}</td>
-                </tr>
-                <tr>
-                    <td align="left">Nomor Telepon:</td>
-                    <td>{{ form.nomorTelp }}</td>
-                </tr>
-                <tr>
-                    <td align="left">Jenis Vaksin:</td>
-                    <td>{{ form.jenis }}</td>
-                </tr>
-                <tr>
-                    <td align="left">Syarat Peserta:</td>
-                    <td>{{ form.syaratPeserta }}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit">
-                    </td>
-                </tr>
-            </form>
-        </table>
+    </div>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+                <p align="left">Nama:</p>
+                <p>{{ form.nama }}</p>
+    
+                <p align="left">URL:</p>
+                <p>{{ form.url }}</p>
+    
+                <p align="left">Alamat Lengkap:</p>
+                <p>{{ form.alamat }}</p>
+    
+                <p align="left">Nomor Telepon:</p>
+                <p>{{ form.nomorTelp }}</p>
+    
+                <p align="left">Jenis Vaksin:</p>
+                <p>{{ form.jenis }}</p>
+    
+                <p align="left">Syarat Peserta:</p>
+                <p>{{ form.syaratPeserta }}</p>
+    
+                <input type="submit">    
+
+    </div>
   </body>
 </html>

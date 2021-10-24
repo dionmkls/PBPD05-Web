@@ -1,0 +1,47 @@
+p {
+    text-align: center;
+}
+
+.cardheader {
+    /* background-color: rgb(250, 145, 16); */
+}
+
+#header {
+    text-align: center;
+    background: rgb(226, 226, 226);
+    font-size: 20pt;
+    padding: 10pt;
+    font-weight: 700;
+}
+
+.tableForm {
+    background: rgb(173, 173, 173);
+    padding-bottom: 20pt;
+}
+
+td {
+    padding: 4pt;
+    font-size: 12pt;
+}
+
+
+
+input[type=submit] {
+    background-color: #424242;
+    font-size: 12pt;
+    color: #ffffff;
+    padding-top: 3pt;
+    padding-bottom: 3pt;
+    padding-left: 30pt;
+    padding-right: 30pt;
+    border-radius: 5px;
+    border: none;
+}
+
+input[type=submit]:hover {
+    background-color: #252525;
+}
+
+input[type=submit]:active {
+    font-size: 11pt;
+}

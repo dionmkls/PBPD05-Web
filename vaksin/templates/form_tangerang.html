@@ -6,45 +6,65 @@
   <head>
     <meta charset="UTF-8" />
     <title>Form Lokasi Vaksin Baru</title>
-    <link rel="stylesheet" href="{% static 'rakha\style.css' %}">
+    <link rel="stylesheet" href="{% static 'rakha\style_form.css' %}">
   </head>
   <body>
-    <br>
   {% include 'navbar_form.html' %}
-    <h1 id="header">Tangerang Vaccine Form</h1>
+  <br>
+  <br>
+  <br>
+  <p id="header">Tangerang Vaccine Form</p>
+
+    <div class="tableForm">
         <table align="center" class="myTable">
             <form action="" method="POST">
                 {% csrf_token %}
                 <tr>
-                    <td align="left">Nama:</td>
+                    <td align="center">Nama</td>
+                </tr>
+                <tr>
                     <td>{{ form.nama }}</td>
                 </tr>
                 <tr>
-                    <td align="left">URL:</td>
+                    <td align="center">URL</td>
+                </tr>
+                <tr>
                     <td>{{ form.url }}</td>
                 </tr>
                 <tr>
-                    <td align="right">Alamat Lengkap:</td>
+                    <td align="center">Alamat Lengkap</td>
+                </tr>
+                <tr>
                     <td>{{ form.alamat }}</td>
                 </tr>
                 <tr>
-                    <td align="left">Nomor Telepon:</td>
+                    <td align="center">Nomor Telepon</td>
+                </tr>
+                <tr>
                     <td>{{ form.nomorTelp }}</td>
                 </tr>
                 <tr>
-                    <td align="left">Jenis Vaksin:</td>
+                    <td align="center">Jenis Vaksin</td>
+                </tr>
+                <tr>
                     <td>{{ form.jenis }}</td>
                 </tr>
                 <tr>
-                    <td align="left">Syarat Peserta:</td>
+                    <td align="center">Syarat Peserta</td>
+                </tr>
+                <tr>
                     <td>{{ form.syaratPeserta }}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td align="center">
+                        <br>
                         <input type="submit">
                     </td>
                 </tr>
             </form>
         </table>
+    </div>
+    <br>
+    <br>
   </body>
 </html>
