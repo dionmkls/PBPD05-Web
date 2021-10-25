@@ -1,5 +1,6 @@
 p {
     text-align: center;
+    font-size: 20px;
 }
 
 .container{
@@ -41,32 +42,24 @@ p {
     transition: 300ms all;
 }
 
+p input[type=text] {
+    width: 600px;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 4px;
+    padding: 10px;
 
-
-
-
-
-#header {
-    text-align: center;
-    background: rgb(226, 226, 226);
-    font-size: 20pt;
-    padding: 10pt;
-    font-weight: 700;
+}
+p input[type=number] {
+    width: 200px;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 4px;
+    padding: 10px;
 }
 
-.tableForm {
-    background: rgb(173, 173, 173);
-    padding-bottom: 20pt;
-}
-
-td {
-    padding: 4pt;
-    font-size: 12pt;
-}
 
 input[type=submit] {
     background-color: #424242;
-    font-size: 12pt;
+    font-size: 20px;
     color: #ffffff;
     padding-top: 3pt;
     padding-bottom: 3pt;
@@ -74,6 +67,8 @@ input[type=submit] {
     padding-right: 30pt;
     border-radius: 5px;
     border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 input[type=submit]:hover {
@@ -81,5 +76,5 @@ input[type=submit]:hover {
 }
 
 input[type=submit]:active {
-    transform: scale(0.8);
+    transform: scale(0.95);
 }

@@ -10,6 +10,8 @@
     position: relative;
     display: inline-block;
     align-items: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    transition: 300ms all;
   }
   
   .dropdown-content {
@@ -28,7 +30,12 @@
     display: block;
   }
   
+  .dropdown:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.651);
+  }
   .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown-content a:active {background-color: rgb(218, 240, 255);}
   
   .dropdown:hover .dropdown-content {display: block;}
   
