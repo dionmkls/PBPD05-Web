@@ -2,9 +2,49 @@ p {
     text-align: center;
 }
 
-.cardheader {
-    /* background-color: rgb(250, 145, 16); */
+.container{
+    width: 80%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+#form {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;   
+    justify-content: flex-end; 
+    background-size: cover;
+    background-position: center;
+}
+.formHeader {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    background-color: #334145;
+    font-weight: 700;
+}
+.formContent {
+    background-color: rgb(240, 240, 240);
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms all;
+}
+
+
+
+
+
 
 #header {
     text-align: center;
@@ -24,8 +64,6 @@ td {
     font-size: 12pt;
 }
 
-
-
 input[type=submit] {
     background-color: #424242;
     font-size: 12pt;
@@ -43,5 +81,5 @@ input[type=submit]:hover {
 }
 
 input[type=submit]:active {
-    font-size: 11pt;
+    transform: scale(0.8);
 }

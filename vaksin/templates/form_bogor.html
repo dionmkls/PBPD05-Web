@@ -10,34 +10,41 @@
   </head>
   <body>
     <br>
-  {% include 'navbar_form.html' %}
-  <div class="cardFrom">
-    <div class="cardHeader">
-    <h1 id="header">Bogor Vaccine Form</h1>
+    <div class="container">
+      {% include 'navbar_form.html' %}
     </div>
+    <div class="container">
+      <div id="form">
+        <div class="formHeader">
+          <h1>Bogor Vaccine Form</h1>
+        </div>
+        <div class="formContent">
+          <form action="" method="POST">
+              {% csrf_token %}
+              <p align="left">Nama</p>
+              <p>{{ form.nama }}</p>
 
-        <form action="" method="POST">
-            {% csrf_token %}
-                <p align="left">Nama:</p>
-                <p>{{ form.nama }}</p>
-    
-                <p align="left">URL:</p>
-                <p>{{ form.url }}</p>
-    
-                <p align="left">Alamat Lengkap:</p>
-                <p>{{ form.alamat }}</p>
-    
-                <p align="left">Nomor Telepon:</p>
-                <p>{{ form.nomorTelp }}</p>
-    
-                <p align="left">Jenis Vaksin:</p>
-                <p>{{ form.jenis }}</p>
-    
-                <p align="left">Syarat Peserta:</p>
-                <p>{{ form.syaratPeserta }}</p>
-    
-                <input type="submit">    
+              <p align="left">URL</p>
+              <p>{{ form.url }}</p>
 
+              <p align="left">Alamat Lengkap</p>
+              <p>{{ form.alamat }}</p>
+
+              <p align="left">Nomor Telepon</p>
+              <p>{{ form.nomorTelp }}</p>
+
+              <p align="left">Jenis Vaksin</p>
+              <p>{{ form.jenis }}</p>
+
+              <p align="left">Syarat Peserta</p>
+              <p>{{ form.syaratPeserta }}</p>
+
+              <table align="center">
+                <tr><td><input type="submit"> </td></tr>
+              </table>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -9,62 +9,42 @@
     <link rel="stylesheet" href="{% static 'rakha\style_form.css' %}">
   </head>
   <body>
-  {% include 'navbar_form.html' %}
-  <br>
-  <br>
-  <br>
-  <p id="header">Tangerang Vaccine Form</p>
-
-    <div class="tableForm">
-        <table align="center" class="myTable">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <tr>
-                    <td align="center">Nama</td>
-                </tr>
-                <tr>
-                    <td>{{ form.nama }}</td>
-                </tr>
-                <tr>
-                    <td align="center">URL</td>
-                </tr>
-                <tr>
-                    <td>{{ form.url }}</td>
-                </tr>
-                <tr>
-                    <td align="center">Alamat Lengkap</td>
-                </tr>
-                <tr>
-                    <td>{{ form.alamat }}</td>
-                </tr>
-                <tr>
-                    <td align="center">Nomor Telepon</td>
-                </tr>
-                <tr>
-                    <td>{{ form.nomorTelp }}</td>
-                </tr>
-                <tr>
-                    <td align="center">Jenis Vaksin</td>
-                </tr>
-                <tr>
-                    <td>{{ form.jenis }}</td>
-                </tr>
-                <tr>
-                    <td align="center">Syarat Peserta</td>
-                </tr>
-                <tr>
-                    <td>{{ form.syaratPeserta }}</td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <br>
-                        <input type="submit">
-                    </td>
-                </tr>
-            </form>
-        </table>
+    <br>
+    <div class="container">
+      {% include 'navbar_form.html' %}
     </div>
-    <br>
-    <br>
+    <div class="container">
+      <div id="form">
+        <div class="formHeader">
+          <h1>Tangerang Vaccine Form</h1>
+        </div>
+        <div class="formContent">
+          <form action="" method="POST">
+              {% csrf_token %}
+              <p align="left">Nama</p>
+              <p>{{ form.nama }}</p>
+
+              <p align="left">URL</p>
+              <p>{{ form.url }}</p>
+
+              <p align="left">Alamat Lengkap</p>
+              <p>{{ form.alamat }}</p>
+
+              <p align="left">Nomor Telepon</p>
+              <p>{{ form.nomorTelp }}</p>
+
+              <p align="left">Jenis Vaksin</p>
+              <p>{{ form.jenis }}</p>
+
+              <p align="left">Syarat Peserta</p>
+              <p>{{ form.syaratPeserta }}</p>
+
+              <table align="center">
+                <tr><td><input type="submit"> </td></tr>
+              </table>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

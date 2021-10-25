@@ -4,105 +4,109 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous"> -->
+    <!-- <meta charset="UTF-8" /> -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale = 1.0">
     <title>Lokasi Vaksin</title>
     <link rel="stylesheet" href="{% static 'rakha\style_index.css' %}">
   </head>
   <body>
   <h1 align="center">Vaksin</h1>
   <div class="ketVaksin">
-    <p align="center">Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek.</p>
-    <p align="center">Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek.</p>
-    <p align="center">Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek.</p>
-    <p align="center">Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek.</p>
-    <p align="center">Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek.</p>
+    <p>Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek. Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek. Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek. Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek. Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek.</p>
   </div>
   <br>
   <br>
   <br>
   <br>
   <h3 align="center">Jakarta</h3>
-  <div class="cards">
+  <div class="container">
   {% for vaksin in vaksinsJak %}
-    <div class="card">  
-      <p class="namaTempat">Nama: {{ vaksin.nama }}</p>
-      <p>Alamat: {{ vaksin.alamat }}</p>
-      <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-      <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-      <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
-      <a href="{{ vaksin.url }}">Google Maps</a>
+    <div class="cards">
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
+        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <a href="{{ vaksin.url }}">Google Maps</a>
+      </div>
     </div>
   {% endfor %}
+  </div>
   </div>
   <h3 align="center">Bogor</h3>
-  <div class="cards">  
+  <div class="container">  
   {% for vaksin in vaksinsBog %}
-    <div class="card">  
-      <p class="namaTempat">Nama: {{ vaksin.nama }}</p>
-      <p>Alamat: {{ vaksin.alamat }}</p>
-      <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-      <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-      <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
-      <a href="{{ vaksin.url }}">Google Maps</a>
+    <div class="cards"> 
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
+        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <a href="{{ vaksin.url }}">Google Maps</a>
+      </div>
     </div>
   {% endfor %}
+  </div>
   </div>
   <h3 align="center">Depok</h3>
-  <div class="cards"> 
+  <div class="container"> 
   {% for vaksin in vaksinsDep %}
-    <div class="card">  
-      <p class="namaTempat">Nama: {{ vaksin.nama }}</p>
-      <p>Alamat: {{ vaksin.alamat }}</p>
-      <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-      <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-      <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
-      <a href="{{ vaksin.url }}">Google Maps</a>
+    <div class="cards"> 
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
+        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <a href="{{ vaksin.url }}">Google Maps</a>
+      </div>
     </div>
   {% endfor %}
+  </div>
   </div>
   <h3 align="center">Tangerang</h3>
-  <div class="cards">
+  <div class="container">
   {% for vaksin in vaksinsTag %}
-    <div class="card">  
-      <p class="namaTempat">Nama: {{ vaksin.nama }}</p>
-      <p>Alamat: {{ vaksin.alamat }}</p>
-      <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-      <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-      <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
-      <a href="{{ vaksin.url }}">Google Maps</a>
+    <div class="cards">
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
+        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <a href="{{ vaksin.url }}">Google Maps</a>
+      </div>
     </div>
   {% endfor %}
+  </div>
   </div>
   <h3 align="center">Bekasi</h3>
-  <div class="cards"> 
-  {% for vaksin in vaksinsBek %}
-    <div class="card">  
-      <p class="namaTempat">Nama: {{ vaksin.nama }}</p>
-      <p>Alamat: {{ vaksin.alamat }}</p>
-      <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-      <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-      <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
-      <a href="{{ vaksin.url }}">Google Maps</a>
+  <div class="container">
+    {% for vaksin in vaksinsBek %}
+    <div class="cards"> 
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
+        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <a href="{{ vaksin.url }}">Google Maps</a>
+      </div>
     </div>
-  {% endfor %}
+    {% endfor %}
   </div>
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col card">1</div>
-            <div class="col card">2</div>
-            <div class="col card">3</div>
-        </div>
-        <div class="row">
-            <div class="col card">4</div>
-            <div class="col card">5</div>
-            <div class="col card">6</div>
-        </div>
-    </div> -->
   </body>
 </html>
