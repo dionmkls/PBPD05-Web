@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <title>APD List</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Jenis:    </th>
+            <th>Lokasi:  </th>
+            <th>Jumlah Tersedia:  </th>
+            <th>Harga:</th>
+        </tr>
+        {% if lst_of_apd %}
+            {% for data in lst_of_apd %}
+            <tr>
+                <td>{{ data.jenis }}</td>>
+                <td>{{ data.lokasi }}</td>>
+                <td>{{ data.jumlah }}</td>>
+                <td>Rp.{{ data.harga }}</td>>
+            </tr>>
+            {% endfor %}
+        {% endif %}
+    </table>
+</body>
+</html>
