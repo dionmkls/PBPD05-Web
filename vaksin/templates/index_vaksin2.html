@@ -10,6 +10,8 @@
     <title>Lokasi Vaksin</title>
     <link rel="stylesheet" href="{% static 'rakha\style_index.css' %}">
     <link rel="stylesheet" href="{% static 'rakha\style_index2.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/JavaScript" src="{% static 'rakha\script.js' %}" ></script>
   </head>
   <body>
   <h1 align="center">Vaksin</h1>
@@ -20,7 +22,7 @@
   <br>
   <br>
   <br>
-  <h3 align="center">Jakarta</h3>
+  <h2 align="center">Jakarta</h2>
   <div class="container">
   {% for vaksin in vaksinsJak %}
     <div class="cards">
@@ -29,24 +31,24 @@
       </div>
       <div class="card-content">
         <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
         <div class="tempat-gmaps">
-            <table align="center">
-                <tr>
-                    <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-                    <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
-                    <td><button type="button" class="butDelete" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
-                </tr>
-            </table>
+          <table align="center">
+            <tr>
+              <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
+              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
+              <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
   {% endfor %}
   </div>
   </div>
-  <h3 align="center">Bogor</h3>
+  <h2 align="center">Bogor</h2>
   <div class="container">  
   {% for vaksin in vaksinsBog %}
     <div class="cards"> 
@@ -55,24 +57,24 @@
       </div>
       <div class="card-content">
         <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
         <div class="tempat-gmaps">
-            <table align="center">
-                <tr>
-                    <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-                    <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
-                    <td><button type="button" class="butDelete" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
-                </tr>
-            </table>
+          <table align="center">
+            <tr>
+              <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
+              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
+              <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
   {% endfor %}
   </div>
   </div>
-  <h3 align="center">Depok</h3>
+  <h2 align="center">Depok</h2>
   <div class="container"> 
   {% for vaksin in vaksinsDep %}
     <div class="cards"> 
@@ -81,24 +83,24 @@
       </div>
       <div class="card-content">
         <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
         <div class="tempat-gmaps">
-            <table align="center">
-                <tr>
-                    <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-                    <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
-                    <td><button type="button" class="butDelete" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
-                </tr>
-            </table>
+          <table align="center">
+            <tr>
+              <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
+              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
+              <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
   {% endfor %}
   </div>
   </div>
-  <h3 align="center">Tangerang</h3>
+  <h2 align="center">Tangerang</h2>
   <div class="container">
   {% for vaksin in vaksinsTag %}
     <div class="cards">
@@ -107,24 +109,24 @@
       </div>
       <div class="card-content">
         <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
         <div class="tempat-gmaps">
-            <table align="center">
-                <tr>
-                    <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-                    <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
-                    <td><button type="button" class="butDelete" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
-                </tr>
-            </table>
+          <table align="center">
+            <tr>
+              <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
+              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
+              <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
   {% endfor %}
   </div>
   </div>
-  <h3 align="center">Bekasi</h3>
+  <h2 align="center">Bekasi</h2>
   <div class="container">
     {% for vaksin in vaksinsBek %}
     <div class="cards"> 
@@ -133,35 +135,41 @@
       </div>
       <div class="card-content">
         <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>Nomor Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis Vaksin: {{ vaksin.jenis }}</p>
-        <p>Syarat Peserta: {{ vaksin.syaratPeserta }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
         <div class="tempat-gmaps">
-            <table align="center">
-                <tr>
-                    <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-                    <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
-                    <td><button type="button" class="butDelete" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
-                </tr>
-            </table>
+          <table align="center">
+            <tr>
+              <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
+              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
+              <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
-  
+
   <div id="edit" class="w3-modal">
     <div class="w3-modal-content">
-      <div class="w3-container">
-        <span onclick="document.getElementById('edit').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <div class="w3-container" id="isi-modal">
+        <span onclick="exit()" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text in the Modal..</p>
+        <p>Some text in the Modal..</p>
       </div>
     </div>
   </div>
   <div id="delete" class="w3-modal">
     <div class="w3-modal-content">
-      <div class="w3-container">
-        <span onclick="document.getElementById('delete').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-            
+      <div class="w3-container" id="isi-modal">
+        <span onclick="exit()" class="w3-button w3-display-topright">&times;</span>
+        <h2 id="h-modal">Delete</h2>
+        <p>Are you sure you want to delete this Vaccine Location?</p>
+        <div>
+          <button class="butMerah" onclick="deleteItem()">Yes</button>
+        </div>
       </div>
     </div>
   </div>  

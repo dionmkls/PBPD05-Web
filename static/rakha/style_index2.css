@@ -11,7 +11,7 @@
     margin-left: 5px;
 }
 
-.butDelete {
+.butMerah {
     background-color: rgb(255, 0, 0);
     border: none;
     color: rgb(255, 255, 255);
@@ -25,4 +25,17 @@
 button:hover {
     background-color: #c2e8ff;
     color: rgb(0, 0, 0);
+}
+button:active {
+    transform: scale(0.9);
+}
+
+#isi-modal {
+    padding: 30px;
+    text-align: center;
+}
+
+#h-modal {
+    color: black;
+    padding-bottom: 10px;
 }

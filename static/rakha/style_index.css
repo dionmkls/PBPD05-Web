@@ -21,13 +21,14 @@ h3 {
     color: white;
 }
 
-h3 { 
+h2 { 
     font-size: 30px;
     margin-bottom: 20px;
+    color: white;
 }
 
 .container{
-    width: 80%;
+    width: 90%;
     margin: auto;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -37,9 +38,8 @@ h3 {
 }
 .cards {
     border: none;
-    /* border-radius: 20px; */
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -80,7 +80,6 @@ h3 {
     font-weight: 700;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    /* transition: 300ms all; */
 }
 
 .gmaps {
@@ -105,4 +104,33 @@ h3 {
     display: block;
     text-align: center;
     margin: 20px;
+}
+
+.but-more {
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #c2e8ff;
+    color: rgb(0, 0, 0);
+}
+button:active {
+    transform: scale(0.9);
+}
+
+#isi-modal {
+    padding: 30px;
+    text-align: center;
+}
+
+#h-modal {
+    color: black;
+    padding-bottom: 10px;
 }

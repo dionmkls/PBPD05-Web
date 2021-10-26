@@ -5,18 +5,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <title>Form Lokasi Vaksin Baru</title>
     <link rel="stylesheet" href="{% static 'rakha\style_form.css' %}">
+    <link rel="stylesheet" href="{% static 'rakha\style_navbar_form.css' %}">
   </head>
   <body>
-    <br>
-    <div class="container">
-      {% include 'navbar_form.html' %}
-    </div>
     <div class="container">
       <div id="form">
         <div class="formHeader">
-          <h1>Jakarta Vaccine Form</h1>
+          <table align="center">
+            <tr>
+              <td>
+                <div class="dropdown">
+                  <button class="dropbtn">Jakarta</button>
+                  <div class="dropdown-content">
+                    <a href="/lokasi-vaksin/add-vaksin-bogor">Bogor</a>
+                    <a href="/lokasi-vaksin/add-vaksin-depok">Depok</a>
+                    <a href="/lokasi-vaksin/add-vaksin-tangerang">Tangerang</a>
+                    <a href="/lokasi-vaksin/add-vaksin-bekasi">Bekasi</a>
+                  </div>
+                </div>
+              </td>
+              <td><h1> Vaccine Form</h1></td>
+            </tr>
+          </table>
         </div>
         <div class="formContent">
           <form action="" method="POST">
