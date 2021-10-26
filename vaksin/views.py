@@ -17,7 +17,10 @@ def index(request):
         'vaksinsTag': vaksinsTag,
         'vaksinsBek': vaksinsBek,
     }
-    return render(request, 'index_vaksin.html', response)
+    if request.user.is_authenticated:
+        return render(request, 'index_vaksin2.html', response)
+    else:
+        return render(request, 'index_vaksin.html', response)
 
 @login_required(login_url='/admin/login/')
 def add_jakarta(request):
