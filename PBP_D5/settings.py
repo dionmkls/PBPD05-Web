@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'vaksin',
     'faq',
     'beranda',
-    'rumah-sakit',
+    'rumah_sakit',
     'oksigen',
     'forum',
     'apd',
