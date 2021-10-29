@@ -19,10 +19,12 @@ from hello_world.views import index
 
 import hello_world.urls as index_urls
 import vaksin.urls as vaksin_urls
+import faq.urls as faq_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("index/", include(index_urls)),
     re_path(r"^$", index, name="index"),
     path('lokasi-vaksin', include(vaksin_urls)),
+    path('faq/', include(faq_urls)),
 ]
