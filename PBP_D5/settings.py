@@ -41,6 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hello_world',
     'vaksin',
+<<<<<<< HEAD
+=======
+    'faq',
+    'beranda',
+    'rumah_sakit',
+    'oksigen',
+    'forum',
+>>>>>>> a4d92c5d283d16573b439ee96112b63ffd29e344
     'apd',
 ]
 
@@ -60,7 +68,7 @@ ROOT_URLCONF = 'PBP_D5.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

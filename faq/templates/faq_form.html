@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'dion\faqform_style.css'%}">
+    <title>Add FAQ</title>
+</head>
+<body>
+    <form id="faq-form" action=" " method="POST"> 
+        {% csrf_token %}
+        <div class="container">
+            <div class="title">Input Model</div>
+        
+            <div class="content">
+                <table class=content-action>
+                    {{ form.as_table }}
+                </table>
+            </div>
+        
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+<!-- <script>
+    $(document).on('submit', '#faq-form', function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: 'POST',
+            url: 'add-faq',
+            data: {
+                question: $('#question').val(),
+                answer: $('#answer').val(),
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function () {
+                alert('Created New FAQ!');
+            }
+        });
+    });
+</script> -->
+</html>
+
+<!-- <form id="faq-form" action=" " method="POST">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dion\faqform_style.css'%}">
+
+    {% csrf_token %}
+
+    <body>
+        <div class="container">
+            <div class="title">Input Model</div>
+
+            <div class="content">
+                <table class=content-action>
+                    {{ form.as_table }}
+                </table>
+            </div>
+
+            <input type="submit" value="Submit">
+        </div>
+    </body>
+</form> -->

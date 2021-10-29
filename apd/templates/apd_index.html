@@ -3,34 +3,68 @@
 <html lang="en">
     <head>
     <meta charset="UTF-8" />
-    <title>APD List</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style>
+    <title>Laman APD</title>
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <script src="{% static 'js/jQuery.js' %}"></script>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Jenis:    </th>
-            <th>Lokasi:  </th>
-            <th>Jumlah Tersedia:  </th>
-            <th>Harga:</th>
-        </tr>
-        {% if lst_of_apd %}
-            {% for data in lst_of_apd %}
-            <tr>
-                <td>{{ data.jenis }}</td>>
-                <td>{{ data.lokasi }}</td>>
-                <td>{{ data.jumlah }}</td>>
-                <td>Rp.{{ data.harga }}</td>>
-            </tr>>
-            {% endfor %}
-        {% endif %}
-    </table>
+
+    <script>
+        $(document).ready(function(){
+            $("#buttonImg").click(function(){
+                $.ajax({
+                    url: "json",
+                    success: function(result) {
+                        for(i=0; i < result.length; i++){
+                            $('#apd' + result[i].pk)
+                            .append('<img src=' + result[i].fields.img_source + ' class="card-img-top" alt=' + 
+                            result[i].fields.jenis + '>');
+                        }
+                        document.getElementById("buttonImg").disabled = true; 
+                    }
+                })
+            });
+        });
+    </script>
+
+<div style="background-color: white;" class="px-5 py-2">
+
+    <h1>Laman APD</h1>
+
+    <p>Alat Pelindung Diri (APD) adalah kelengkapan yang wajib digunakan saat 
+        bekerja sesuai bahaya dan risiko kerja untuk menjaga keselamatan pekerja 
+        itu sendiri dan orang di sekelilingnya. 
+        (<a href='https://id.wikipedia.org/wiki/Alat_pelindung_diri'>id.wikipedia.org</a>)
+         Link untuk menambahkan barang APD (login): <a href='./add'>Form Tambah APD</a>
+    </p>
+    <p>
+        Pencet <button type="button" class="btn btn-info" id="buttonImg">Button Ini</button> untuk
+         menampilkan Foto (bila ada).
+    </p>
+</div>
+
+<div style="background-color: red;" class="px-5 py-2">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto">
+    {% if lst_of_apd %}
+        {% for data in lst_of_apd %}
+        <div class="col" style="width: 24rem;">
+            <div class="card" id='apd{{data.id}}'>
+                <!-- <img src={{data.img_source}} class="card-img-top" alt={{data.jenis}}> -->
+                <div class="card-body">
+                    <h5 class="card-title">{{data.jenis}}</h5>
+                    <p class="card-text">
+                        Apd berjenis {{data.jenis}} dengan harga Rp.{{data.harga}}
+                    </p>
+                    <p>dapat di pesan di: 
+                        <a href={{data.lokasi}}><button type="button" class="btn btn-primary">Disini</button></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+</div>
 </body>
 </html>
