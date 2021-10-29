@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'hello_world',
     'vaksin',
     'faq',
+    'beranda',
+    'rumah-sakit',
+    'oksigen',
+    'forum',
+    'apd',
 ]
 
 MIDDLEWARE = [
