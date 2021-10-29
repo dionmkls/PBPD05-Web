@@ -1,0 +1,86 @@
+/* .accordion-container {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0D1317;
+}
+
+.container-fluid {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.container-fluid h2 {
+    color: #F45B69;
+    position: relative;
+    width: 23rem;
+}
+
+.container-fluid h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    width: 67px;
+    height: 2px;
+    background-color: #F45B69;
+}
+
+.accordion {
+    width: 100%;
+    padding: 0 5px;
+    border: 2px solid #A3D9FF;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.accordion .icon {
+    margin: 0 10px 0 0;
+    width: 30px;
+    height: 30px;
+    background: url(images/R.png) no-repeat 8px 7px #A3D9FF;
+    border-radius: 50%;
+    float: left;
+    transition: all .5s ease-in;
+}
+
+.accordion h5 {
+    font-size: 22px;
+    margin: 0;
+    padding: 3px 0 0 0;
+    font-weight: normal;
+    color: #A3D9FF;
+    transition: all .5s ease-in;
+}
+
+.active .icon {
+    background: url(images/R.png) no-repeat 8px -25px #fff;
+}
+
+.active {
+    background-color: #A3D9FF;
+    color: #fff;
+}
+
+.active h5 {
+    color: #fff;
+}
+
+.panel {
+    padding: 0 15px;
+    border-left: 1px solid #A3D9FF;
+    margin-left: 25px;
+    font-size: 14px;
+    color: #fff;
+    text-align: justify;
+    overflow: hidden;
+    max-height: 0;
+    transition: all .5s ease-in;
+} */

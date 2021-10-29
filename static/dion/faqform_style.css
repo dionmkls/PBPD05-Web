@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+/* * {
+
+} */
+    
+body {
+    font-family: 'Baloo Bhaina 2', cursive;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: #F3EFF5;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.content-action {
+    font-weight: 700;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+input[type="submit"] {
+    font-family: 'Baloo Bhaina 2', cursive;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #D33F49;
+    background-origin: border-box;
+    background-clip: border-box;
+    display: block;
+    padding: 5px 15px;
+}
