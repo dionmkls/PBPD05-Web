@@ -106,7 +106,7 @@ h2 {
     margin: 20px;
 }
 
-.but-more {
+/* .but-more {
     background-color: rgb(31, 31, 31);
     border: none;
     color: rgb(255, 255, 255);
@@ -115,7 +115,7 @@ h2 {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-}
+} */
 
 button:hover {
     background-color: #c2e8ff;
@@ -123,6 +123,17 @@ button:hover {
 }
 button:active {
     transform: scale(0.9);
+}
+
+@media screen and (max-width: 440px) {
+    .card-content {
+        font-size: 12px;
+    }
+
+    .namaTempat p{
+        font-size: 16px;
+        padding-top: 4%;
+    }
 }
 
 #isi-modal {
@@ -134,3 +145,4 @@ button:active {
     color: black;
     padding-bottom: 10px;
 }
+

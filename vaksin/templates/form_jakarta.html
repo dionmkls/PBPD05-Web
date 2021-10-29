@@ -5,7 +5,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <title>Form Lokasi Vaksin Baru</title>
     <link rel="stylesheet" href="{% static 'rakha\style_form.css' %}">
     <link rel="stylesheet" href="{% static 'rakha\style_navbar_form.css' %}">
@@ -34,22 +33,22 @@
         <div class="formContent">
           <form action="" method="POST">
               {% csrf_token %}
-              <p align="left">Nama</p>
+              <p>Nama</p>
               <p>{{ form.nama }}</p>
 
-              <p align="left">URL</p>
+              <p>URL</p>
               <p>{{ form.url }}</p>
 
-              <p align="left">Alamat Lengkap</p>
+              <p>Alamat Lengkap</p>
               <p>{{ form.alamat }}</p>
 
-              <p align="left">Nomor Telepon</p>
+              <p>Nomor Telepon</p>
               <p>{{ form.nomorTelp }}</p>
 
-              <p align="left">Jenis Vaksin</p>
+              <p>Jenis Vaksin</p>
               <p>{{ form.jenis }}</p>
 
-              <p align="left">Syarat Peserta</p>
+              <p>Syarat Peserta</p>
               <p>{{ form.syaratPeserta }}</p>
 
               <table align="center">

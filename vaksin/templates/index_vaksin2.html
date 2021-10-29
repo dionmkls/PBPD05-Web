@@ -22,6 +22,7 @@
   <br>
   <br>
   <br>
+  
   <h2 align="center">Jakarta</h2>
   <div class="container">
   {% for vaksin in vaksinsJak %}
@@ -34,20 +35,19 @@
         <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
         <p>Jenis: {{ vaksin.jenis }}</p>
         <p>Syarat: {{ vaksin.syaratPeserta }}</p>
-        <div class="tempat-gmaps">
+        
           <table align="center">
             <tr>
-              <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
-              <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
+              <td><div class="tempat-gmaps"><a href="{{ vaksin.url }}" class="gmaps">Maps</a></div></td>
+              <td><div><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></div></td>
             </tr>
           </table>
-        </div>
+        
       </div>
     </div>
   {% endfor %}
   </div>
-  </div>
+
   <h2 align="center">Bogor</h2>
   <div class="container">  
   {% for vaksin in vaksinsBog %}
@@ -64,7 +64,6 @@
           <table align="center">
             <tr>
               <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
               <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
             </tr>
           </table>
@@ -73,7 +72,7 @@
     </div>
   {% endfor %}
   </div>
-  </div>
+
   <h2 align="center">Depok</h2>
   <div class="container"> 
   {% for vaksin in vaksinsDep %}
@@ -90,7 +89,6 @@
           <table align="center">
             <tr>
               <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
               <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
             </tr>
           </table>
@@ -99,7 +97,7 @@
     </div>
   {% endfor %}
   </div>
-  </div>
+
   <h2 align="center">Tangerang</h2>
   <div class="container">
   {% for vaksin in vaksinsTag %}
@@ -116,7 +114,6 @@
           <table align="center">
             <tr>
               <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
               <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
             </tr>
           </table>
@@ -125,7 +122,7 @@
     </div>
   {% endfor %}
   </div>
-  </div>
+
   <h2 align="center">Bekasi</h2>
   <div class="container">
     {% for vaksin in vaksinsBek %}
@@ -142,7 +139,6 @@
           <table align="center">
             <tr>
               <td><a href="{{ vaksin.url }}" class="gmaps">Maps</a></td>
-              <td><button type="button" class="butEdit" onclick="document.getElementById('edit').style.display='block'">Edit</button></td>
               <td><button type="button" class="butMerah" onclick="document.getElementById('delete').style.display='block'">Delete</button></td>
             </tr>
           </table>

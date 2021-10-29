@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hello_world',
     'vaksin',
+    'beranda',
 ]
 
 MIDDLEWARE = [
