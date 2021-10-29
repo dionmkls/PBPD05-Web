@@ -43,10 +43,10 @@ INSTALLED_APPS = [
     'vaksin',
     'faq',
     'beranda',
-    'rumah_sakit',
-    'oksigen',
-    'forum',
-    'apd',
+    # 'rumah_sakit',
+    # 'oksigen',
+    # 'forum',
+    # 'apd',
 ]
 
 MIDDLEWARE = [

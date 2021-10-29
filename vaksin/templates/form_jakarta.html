@@ -1,0 +1,62 @@
+{% load static %}
+{% include 'navbar_vaksin.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Lokasi Vaksin Baru</title>
+    <link rel="stylesheet" href="{% static 'rakha\style_form.css' %}">
+    <link rel="stylesheet" href="{% static 'rakha\style_navbar_form.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <div id="form">
+        <div class="formHeader">
+          <table align="center">
+            <tr>
+              <td>
+                <div class="dropdown">
+                  <button class="dropbtn">Jakarta</button>
+                  <div class="dropdown-content">
+                    <a href="/lokasi-vaksin/add-vaksin-bogor">Bogor</a>
+                    <a href="/lokasi-vaksin/add-vaksin-depok">Depok</a>
+                    <a href="/lokasi-vaksin/add-vaksin-tangerang">Tangerang</a>
+                    <a href="/lokasi-vaksin/add-vaksin-bekasi">Bekasi</a>
+                  </div>
+                </div>
+              </td>
+              <td><h1> Vaccine Form</h1></td>
+            </tr>
+          </table>
+        </div>
+        <div class="formContent">
+          <form action="" method="POST">
+              {% csrf_token %}
+              <p>Nama</p>
+              <p>{{ form.nama }}</p>
+
+              <p>URL</p>
+              <p>{{ form.url }}</p>
+
+              <p>Alamat Lengkap</p>
+              <p>{{ form.alamat }}</p>
+
+              <p>Nomor Telepon</p>
+              <p>{{ form.nomorTelp }}</p>
+
+              <p>Jenis Vaksin</p>
+              <p>{{ form.jenis }}</p>
+
+              <p>Syarat Peserta</p>
+              <p>{{ form.syaratPeserta }}</p>
+
+              <table align="center">
+                <tr><td><input type="submit"> </td></tr>
+              </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
