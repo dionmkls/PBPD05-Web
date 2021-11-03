@@ -31,7 +31,6 @@ urlpatterns = [
     path('lokasi-vaksin/', include(vaksin_urls)),
     path('beranda/', include('beranda.urls')),
     path('apd/', include(apd_urls)),
-    # path('faq/', include(faq_urls)),
     path('faq/', MainView.as_view(), name='main-view'),
     path('faqs-json/<int:num_posts>/', PostJsonListView.as_view(), name='faqs-json-view'),
     # path('forum/', include('forum.urls')),

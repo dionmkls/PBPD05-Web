@@ -3,9 +3,9 @@ body{
 }
 
 .isi-beranda{
-    min-height:1500px;
+    min-height:2000px;
     padding:40px 40px;
-    margin: 8px;
+    margin: 10px;
     
     background-color: #edf6fa;
     position:relative;
