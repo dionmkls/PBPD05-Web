@@ -1,0 +1,5 @@
+.jumbotron {
+    background-image: url('/static/qosim/img/iamge.jpg');
+    height: 350px;
+    /* background-color: #afafff; */
+}

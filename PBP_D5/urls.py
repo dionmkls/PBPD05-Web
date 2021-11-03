@@ -34,6 +34,6 @@ urlpatterns = [
     path('faq/', MainView.as_view(), name='main-view'),
     path('faqs-json/<int:num_posts>/', PostJsonListView.as_view(), name='faqs-json-view'),
     # path('forum/', include('forum.urls')),
-    # path('rumah-sakit/', include('rumah_sakit.urls')),
+    path('rumah-sakit/', include('rumah_sakit.urls')),
     # path('tempat-oksigen/', include('oksigen.urls')),
 ]
