@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bagian-forum{
+    display: flex;
+}
+
+.penjelasan-forum{
+    width: 900px;
+    height: 820px;
+    padding-top:15%;
+    padding-right: 10%;
+}
+
+.judul {
+    top: 50%;
+    left: 20%;
+    Font-style: Bold;
+    color: #034460;
+    Font-size: 45px;
+    padding-left: 10%;
+}
+
+.penjelasan {
+    top: 50%;
+    left: 20%;
+    Font-style: Medium;
+    Font-size: 20px;
+    padding-left: 10%;
+}
+
+button.btn-lihat-forum{
+    position: absolute;
+    padding: 10px 40px;
+    background: #33B6ED;
+    border: none;
+    color:white;
+    font-style: Bold;
+    font-size: larger;
+    box-shadow: 0px 3px 9px rgba(03, 44, 60, 0.20);
+
+    border-radius: 48px;
+    margin-left: 70px;
+    margin-top: 15px;
+    transition: 0.3s;
+
+}
+button.btn-lihat-forum:hover{
+    transform: scale(1.1);
+    opacity: 10;
+}
+
+.add-form{
+    width: 50%;
+    height: 100%;
+}
+
+.formnya{
+    width: 900px;
+    height: 820px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: 60px;
+    padding-right: 65px;
+    background: #CAEFFF;
+}
+
+.isi-form{
+    padding: 35px;
+    width: 700px;
+    background-color: #3E8DAE;
+    border-radius: 18px;
+    height: 100%;
+}
+
+.attrs-title{
+    width: 620px;
+    height: 60px;
+    background: white;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.attrs-from{
+    width: 620px;
+    height: 60px;
+    background: white;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.attrs-message{
+    width: 620px;
+    height: 220px;
+    background: white;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+label{
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.btn-submit{
+    position: absolute;
+    padding: 10px 40px;
+    background: #33B6ED;
+    border: none;
+    color:white;
+    font-style: Bold;
+    font-size: medium;
+    box-shadow: 0px 3px 9px rgba(03, 44, 60, 0.20);
+
+    border-radius: 48px;
+    margin-top: 15px;
+    transition: 0.3s;
+}

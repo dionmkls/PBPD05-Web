@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Forum-Heading{
+    padding-top:15%;
+    width: 50%;
+    height: 700px;
+}
+
+.text-heading-sapa {
+    top: 50%;
+    left: 20%;
+    Font-style: Medium;
+    Font-size: 35px;
+    padding-left: 10%;
+}
+
+.text-heading-judul {
+    top: 50%;
+    left: 20%;
+    Font-style: Bold;
+    color: #034460;
+    Font-size: 45px;
+    padding-left: 10%;
+}
+
+.text-heading-penjelasan {
+    top: 50%;
+    left: 20%;
+    Font-style: Medium;
+    Font-size: 20px;
+    padding-left: 10%;
+}
+
+button.btn-isi-forum{
+    position: absolute;
+    padding: 10px 40px;
+    background: #33B6ED;
+    border: none;
+    color:white;
+    font-style: Bold;
+    font-size: larger;
+    box-shadow: 0px 3px 9px rgba(03, 44, 60, 0.20);
+
+    border-radius: 48px;
+    margin-left: 70px;
+    margin-top: 15px;
+    transition: 0.3s;
+
+}
+button.btn-isi-forum:hover{
+    transform: scale(1.1);
+    opacity: 10;
+}
+
+.illustration-heading img{
+    position: absolute;
+    width: 82%;
+    height:82%;
+    top: 2%;
+    right:-15%;
+}
+
+.ForumCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.forum-card {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    background-color: #034460;
+    border: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 20px;
+    margin: 30px;
+    overflow: hidden;
+    box-shadow: 6px 6px 9px rgba(03, 44, 60, 0.30);
+    transition: 0.5s;
+}
+
+.forum-card:hover{
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.hiasan{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    background-color:  #034460;
+}
+
+.isi-forum{
+    position: absolute;
+    width: 105%;
+    height: 100%;
+    page-break-after: 20px;
+    padding: 10px;
+    padding-right: 20px;
+    text-align: justify;
+    margin-left: 30px;
+    background: white;
+}
+
+
+
+.btn-liat-lengkap{
+    width: 40%;
+    padding: 7px 20px;
+    background: #33B6ED;
+    border: none;
+    color:white;
+    font-style: Bold;
+    font-size: 10px;
+    
+    border-radius: 48px;
+    margin-top: 25px;
+    transform: translateX(150%);
+}
+
+.judul{
+    color: #034460;
+    font-weight: 700;
+    Font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 4px;
+}
+
+
+.penulis{
+    Font-style: medium;
+    color: #034460;
+    Font-size: 10px;
+    padding-bottom: 20px;
+}
+
+.isi{
+    height: 90px;
+    width: 340px;
+    Font-style: medium;
+    color: black;
+    Font-size: 15px;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(03, 44, 60, 0.70);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.konten-popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    width: 700px;
+    height: 400px;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 35px;
+
+    text-align: center;
+}
+
+.btn-close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 45px;
+    height: 45px;
+    color:black;
+    font-size: 25px;
+    font-weight: 600px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.judul-popup{
+    Font-style: Bold;
+    color: #3E8DAE;
+    Font-size: 35px;
+    padding-top: 35px;
+    padding-bottom: 10px;
+
+}
+
+.penulis-popup{
+    Font-style: medium;
+    color: black;
+    Font-size: 15px;
+    padding-bottom: 20px;
+}
+
+.isi-popup{
+    height: 200px;
+    width: 650px;
+    Font-style: medium;
+    color: white;
+    Font-size: 15px;
+    padding: 20px;
+    padding-bottom: 10px;
+    background-color: #3E8DAE;
+    border-radius: 28px;
+}
+
