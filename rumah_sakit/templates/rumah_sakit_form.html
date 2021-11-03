@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'qosim/index.css' %}">
+  <title>{{ page_title|default:"DP5 PBP" }}</title>
+</head>
+<body>
+  <!-- title -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center" style="margin: 30px 0;">{{ page_title|default:"DP5 PBP" }}</h1>
+      <p class="lead">
+        Di bawah ini adalah form untuk mengisi rumah sakit baru yang menyediakan ruang ICU atau kamar kosong untuk pasien.
+      </p>
+    </div>
+  </div>
+    
+  <div class="container">
+    <a class="btn btn-outline-primary" href="/rumah-sakit/" style="margin-bottom: 50px;" role="button">Kembali</a>
+
+    <form method="POST" action="">
+      {% csrf_token %}
+
+      {% for form in rumah_sakit_form %}
+      <div class="form-group">
+        {{ form.label }}
+        {{ form }}
+
+      </div>
+      {% endfor %}
+
+      <button type="submit" class="btn btn-outline-primary" style="margin-bottom: 20px;">Kirim</button>
+    </form>
+  </div>
+    
+  {% include 'footer.html' %}
+
+  <script src="{& static 'js/bootstrap.js' &}"></script>
+
+</body>
+</html>
