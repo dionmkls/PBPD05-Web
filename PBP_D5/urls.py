@@ -32,6 +32,6 @@ urlpatterns = [
     # path('apd/', include(apd_urls)),
     # path('faq/', include(faq_urls)),
     # path('forum/', include('forum.urls')),
-    # path('rumah-sakit/', include('rumah_sakit.urls')),
+    path('rumah-sakit/', include('rumah_sakit.urls')),
     # path('tempat-oksigen/', include('oksigen.urls')),
 ]
