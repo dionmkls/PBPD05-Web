@@ -20,26 +20,11 @@ from hello_world.views import index
 import hello_world.urls as index_urls
 import vaksin.urls as vaksin_urls
 import apd.urls as apd_urls
-<<<<<<< HEAD
-=======
-import faq.urls as faq_urls
-import forum.urls as forum_urls
->>>>>>> a4d92c5d283d16573b439ee96112b63ffd29e344
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("index/", include(index_urls)),
     re_path(r"^$", index, name="index"),
-<<<<<<< HEAD
-    path('lokasi-vaksin', include(vaksin_urls)),
-    path('apd/', include(apd_urls)),
-=======
     path('lokasi-vaksin/', include(vaksin_urls)),
-    path('beranda/', include('beranda.urls')),
     path('apd/', include(apd_urls)),
-    path('faq/', include(faq_urls)),
-    path('forum/', include('forum.urls')),
-    path('rumah-sakit/', include('rumah_sakit.urls')),
-    path('tempat-oksigen/', include('oksigen.urls')),
->>>>>>> a4d92c5d283d16573b439ee96112b63ffd29e344
 ]

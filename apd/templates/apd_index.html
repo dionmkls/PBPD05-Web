@@ -1,4 +1,5 @@
 {% load static %}
+{% include "navbar.html" %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,12 +40,12 @@
          Link untuk menambahkan barang APD (login): <a href='./add'>Form Tambah APD</a>
     </p>
     <p>
-        Pencet <button type="button" class="btn btn-info" id="buttonImg">Button Ini</button> untuk
+        <button type="button" class="btn btn-info" id="buttonImg">Pencet Button Ini</button><br> untuk
          menampilkan Foto (bila ada).
     </p>
 </div>
 
-<div style="background-color: red;" class="px-5 py-2">
+<div class="px-5 py-2" style="background-color:#0d6efd">
     <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto">
     {% if lst_of_apd %}
         {% for data in lst_of_apd %}
@@ -56,7 +57,7 @@
                     <p class="card-text">
                         Apd berjenis {{data.jenis}} dengan harga Rp.{{data.harga}}
                     </p>
-                    <p>dapat di pesan di: 
+                    <p>dapat di pesan di: <br>
                         <a href={{data.lokasi}}><button type="button" class="btn btn-primary">Disini</button></a>
                     </p>
                 </div>
@@ -68,3 +69,5 @@
 </div>
 </body>
 </html>
+
+{% include "footer.html" %}

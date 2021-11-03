@@ -1,4 +1,5 @@
 {% load static %}
+{% include "navbar.html" %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,7 +19,7 @@
     </p>
     </div>
 
-    <div class="px-5 py-2" style="background-color: red;">
+    <div class="px-5 py-2" style="background-color:#0d6efd">
         <form action="" method="POST" style="margin-left: 10px; margin-top: 10px;">
             {% csrf_token %}
             {{ form.non_field_errors }}
@@ -50,3 +51,5 @@
     </div>
     </body>
 </html>
+
+{% include "footer.html" %}

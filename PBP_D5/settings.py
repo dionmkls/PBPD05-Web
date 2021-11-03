@@ -41,14 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hello_world',
     'vaksin',
-<<<<<<< HEAD
-=======
-    'faq',
-    'beranda',
-    'rumah_sakit',
-    'oksigen',
-    'forum',
->>>>>>> a4d92c5d283d16573b439ee96112b63ffd29e344
     'apd',
 ]
 
