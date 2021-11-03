@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     # 'rumah_sakit',
     # 'oksigen',
     # 'forum',
-    # 'apd',
+    'apd',
 ]
 
 MIDDLEWARE = [
