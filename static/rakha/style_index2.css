@@ -1,0 +1,43 @@
+.butEdit {
+    background-color: rgb(114, 89, 255);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.butMerah {
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    /* margin-left: 5px; */
+    margin: 20px;
+}
+
+button:hover {
+    background-color: #c2e8ff;
+    color: rgb(0, 0, 0);
+}
+button:active {
+    transform: scale(0.9);
+}
+
+#isi-modal {
+    padding: 30px;
+    text-align: center;
+}
+
+#h-modal {
+    color: black;
+    padding-bottom: 10px;
+}

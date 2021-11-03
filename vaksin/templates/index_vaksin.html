@@ -1,15 +1,124 @@
 {% load static %}
-<!-- {% include 'navbar.html' %} -->
+{% include 'navbar.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale = 1.0">
     <title>Lokasi Vaksin</title>
-    <link rel="stylesheet" href="{% static 'rakha\style.css' %}">
+    <link rel="stylesheet" href="{% static 'rakha\style_index.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/JavaScript" src="{% static 'rakha\script.js' %}" ></script>
   </head>
   <body>
-      {% for vaksin in vaksins %}
-        
+  <h1 align="center">Vaksin</h1>
+  <div class="ketVaksin">
+    <p>Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek. Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek. Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek. Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek. Dibawah ini adalah lokasi vaksinasi Covid-19 di Jabodetabek.</p>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2 align="center">Jakarta</h2>
+  <div class="container">
+  {% for vaksin in vaksinsJak %}
+    <div class="cards">
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
+        <div class="tempat-gmaps">
+          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  
+  <h2 align="center">Bogor</h2>
+  <div class="container">  
+  {% for vaksin in vaksinsBog %}
+    <div class="cards"> 
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
+        <div class="tempat-gmaps">
+          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+
+  <h2 align="center">Depok</h2>
+  <div class="container"> 
+  {% for vaksin in vaksinsDep %}
+    <div class="cards"> 
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
+        <div class="tempat-gmaps">
+          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+
+  <h2 align="center">Tangerang</h2>
+  <div class="container">
+  {% for vaksin in vaksinsTag %}
+    <div class="cards">
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
+        <div class="tempat-gmaps">
+          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+
+  <h2 align="center">Bekasi</h2>
+  <div class="container">
+    {% for vaksin in vaksinsBek %}
+    <div class="cards"> 
+      <div class="namaTempat">
+        <p>{{ vaksin.nama }}</p>
+      </div>
+      <div class="card-content">
+        <p>Alamat: {{ vaksin.alamat }}</p>
+        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
+        <p>Jenis: {{ vaksin.jenis }}</p>
+        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
+        <div class="tempat-gmaps">
+          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
   </body>
 </html>
