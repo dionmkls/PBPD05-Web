@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend List</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>URL</th>
+        <th>Alamat</th>
+        <th>Telepon</th>
+      </tr> 
+      {% if oksigens  %}
+        {% for oksigen in oksigens %}
+          <tr>
+            <td>{{ oksigen.url }}</td>
+            <td>{{ oksigen.alamat }}</td>
+            <td>{{ oksigen.telepon }}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+    </table>
+  </body>
+</html>
