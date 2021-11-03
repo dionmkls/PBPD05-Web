@@ -28,7 +28,7 @@ urlpatterns = [
     path("index/", include(index_urls)),
     re_path(r"^$", index, name="index"),
     path('lokasi-vaksin/', include(vaksin_urls)),
-    # path('beranda/', include('beranda.urls')),
+    path('beranda/', include('beranda.urls')),
     # path('apd/', include(apd_urls)),
     # path('faq/', include(faq_urls)),
     # path('forum/', include('forum.urls')),

@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table Covid-19</title>
+    <link rel="stylesheet" href="{% static 'ame\css\table_style.css' %}">
+</head>
+<body>
+    <table class="content-table">
+        <tr>
+          <th>Bulan</th>
+          <th>Tahun</th>
+          <th>Penambahan Kasus Positif</th>
+          <th>Kasus Positif Kumulatif</th>
+        </tr>
+          {% if CovidDatas %}
+            {% for CovidData in CovidDatas %}
+              <td>{{ CovidData.bulan }}</td>
+              <td>{{ CovidData.tahun }}</td>
+              <td>{{ CovidData.penambahanKasusPositif }}</td>
+              <td>{{ CovidData.PositifKumulatif }}</td>
+            </tr>  
+            {% endfor %}
+          {% endif %}
+      </table>
+    
+</body>
+</html>
