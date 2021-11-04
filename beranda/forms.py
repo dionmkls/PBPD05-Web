@@ -1,7 +1,12 @@
 from django import forms
-from .models import Information
+from .models import CovidData, VaksinData
 
-class InformationForm(forms.ModelForm):
+class DataCovidForm(forms.ModelForm):
     class Meta:
-        model = Information
+        model = CovidData
+        fields = "__all__"
+
+class DataVaksinForm(forms.ModelForm):
+    class Meta:
+        model = VaksinData
         fields = "__all__"

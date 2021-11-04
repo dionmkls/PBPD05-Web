@@ -1,0 +1,229 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'qosim/index.css' %}">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" /> -->
+  <title>{{ page_title|default:"DP5 PBP" }}</title>
+</head>
+<body>
+  <!-- title -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center" style="margin: 30px 0;">{{ page_title|default:"DP5 PBP" }}</h1>
+      <p class="lead">
+        Di bawah ini adalah list rumah sakit yang menyediakan ruang ICU atau ruang kosong.
+        Lokasi rumah sakit dikelompokkan dalam Jakarta, Bogor, Depok, Tangerang, Bekasi (Jabodetabek), dan luar Jabodetabek.
+      </p>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 20px;">
+    <!-- tambah rs -->
+    {% if user.is_authenticated %}
+    <a class="btn btn-outline-primary" href="add/" role="button">Tambah Rumah Sakit</a>
+    {% else %}
+    <a class="btn btn-outline-primary disabled" href="add/" role="button" aria-disabled="true">Tambah Rumah Sakit</a>
+    {% endif %}
+
+    <!-- cards -->
+    <h1 class="text-center" style="margin: 20px 0;">Jakarta</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for rumah_sakit in rumah_sakit_ls %}
+      {% if rumah_sakit.lokasi == 'JK' %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ rumah_sakit.nama }}</h5>
+              <p class="card-text">
+                  {{ rumah_sakit.lokasi }} <br>
+                  {{ rumah_sakit.alamat }} <br>
+                  {{ rumah_sakit.no_telp }} <br>
+                  {{ rumah_sakit.url_gmaps }} <br>
+                  Tersedia:
+                  {% if rumah_sakit.tersedia == "I" %}
+                  ICU
+                  {% elif rumah_sakit.tersedia == "K" %}
+                  Kamar
+                  {% else %}
+                  ICU dan Kamar
+                  {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    <h1 class="text-center" style="margin: 20px 0;">Bogor</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for rumah_sakit in rumah_sakit_ls %}
+      {% if rumah_sakit.lokasi == 'BO' %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ rumah_sakit.nama }}</h5>
+              <p class="card-text">
+                  {{ rumah_sakit.lokasi }} <br>
+                  {{ rumah_sakit.alamat }} <br>
+                  {{ rumah_sakit.no_telp }} <br>
+                  {{ rumah_sakit.url_gmaps }} <br>
+                  Tersedia:
+                  {% if rumah_sakit.tersedia == "I" %}
+                  ICU
+                  {% elif rumah_sakit.tersedia == "K" %}
+                  Kamar
+                  {% else %}
+                  ICU dan Kamar
+                  {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    <h1 class="text-center" style="margin: 20px 0;">Depok</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for rumah_sakit in rumah_sakit_ls %}
+      {% if rumah_sakit.lokasi == 'DE' %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ rumah_sakit.nama }}</h5>
+              <p class="card-text">
+                  {{ rumah_sakit.lokasi }} <br>
+                  {{ rumah_sakit.alamat }} <br>
+                  {{ rumah_sakit.no_telp }} <br>
+                  {{ rumah_sakit.url_gmaps }} <br>
+                  Tersedia:
+                  {% if rumah_sakit.tersedia == "I" %}
+                  ICU
+                  {% elif rumah_sakit.tersedia == "K" %}
+                  Kamar
+                  {% else %}
+                  ICU dan Kamar
+                  {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    <h1 class="text-center" style="margin: 20px 0;">Tangerang</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for rumah_sakit in rumah_sakit_ls %}
+      {% if rumah_sakit.lokasi == 'TA' %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ rumah_sakit.nama }}</h5>
+              <p class="card-text">
+                  {{ rumah_sakit.lokasi }} <br>
+                  {{ rumah_sakit.alamat }} <br>
+                  {{ rumah_sakit.no_telp }} <br>
+                  {{ rumah_sakit.url_gmaps }} <br>
+                  Tersedia:
+                  {% if rumah_sakit.tersedia == "I" %}
+                  ICU
+                  {% elif rumah_sakit.tersedia == "K" %}
+                  Kamar
+                  {% else %}
+                  ICU dan Kamar
+                  {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    <h1 class="text-center" style="margin: 20px 0;">Bekasi</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for rumah_sakit in rumah_sakit_ls %}
+      {% if rumah_sakit.lokasi == 'BEK' %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ rumah_sakit.nama }}</h5>
+              <p class="card-text">
+                  {{ rumah_sakit.lokasi }} <br>
+                  {{ rumah_sakit.alamat }} <br>
+                  {{ rumah_sakit.no_telp }} <br>
+                  {{ rumah_sakit.url_gmaps }} <br>
+                  Tersedia:
+                  {% if rumah_sakit.tersedia == "I" %}
+                  ICU
+                  {% elif rumah_sakit.tersedia == "K" %}
+                  Kamar
+                  {% else %}
+                  ICU dan Kamar
+                  {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    <h1 class="text-center" style="margin: 20px 0;">Luar Jabodetabek</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for rumah_sakit in rumah_sakit_ls %}
+      {% if rumah_sakit.lokasi == 'L' %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ rumah_sakit.nama }}</h5>
+              <p class="card-text">
+                  {{ rumah_sakit.lokasi }} <br>
+                  {{ rumah_sakit.alamat }} <br>
+                  {{ rumah_sakit.no_telp }} <br>
+                  {{ rumah_sakit.url_gmaps }} <br>
+                  Tersedia:
+                  {% if rumah_sakit.tersedia == "I" %}
+                  ICU
+                  {% elif rumah_sakit.tersedia == "K" %}
+                  Kamar
+                  {% else %}
+                  ICU dan Kamar
+                  {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    <p></p>
+    <!-- tambah rs -->
+    {% if user.is_authenticated %}
+    <a class="btn btn-outline-primary" href="add/" role="button">Tambah Rumah Sakit</a>
+    {% else %}
+    <a class="btn btn-outline-primary disabled" href="add/" role="button" aria-disabled="true">Tambah Rumah Sakit</a>
+    {% endif %}
+
+  </div>
+
+  {% include 'footer.html' %}
+
+  <script src="{& static 'js/bootstrap.js' &}"></script>
+</body>
+</html>

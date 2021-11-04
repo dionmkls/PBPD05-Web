@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Forum</title>
+    <link rel="stylesheet" href="{% static 'rheina\style_form.css' %}">
+</head> 
+<body>
+    <div class="navbar"></div>
+    {% include "navbar.html" %}
+    <section class ="bagian-forum">
+        <section class ="penjelasan-forum">
+            <div class="judul">
+                <p>
+                    YUK BERBAGI CERITA!
+                </p>
+            </div>
+            <div class="penjelasan">
+                <p>
+                Forum ini berisi cerita, saran, dan pengalaman dari berbagai kalangan untuk membantu dan menyemangati teman-teman dalam menghadapi pandemi COVID!
+                </p>
+            </div>
+            <a href="/forum/">
+                <button class="btn-lihat-forum">
+                    Lihat Forum!
+                </button>
+            </a>
+        </section>
+
+        <section class="add-form">
+            <div class="formnya">
+                <div class="isi-form">
+                    <form action="" method="POST"> 
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn-submit">ADD FORUM</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>
+{% include "footer.html" %}

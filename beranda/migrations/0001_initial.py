@@ -12,12 +12,24 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Information',
+            name='CovidData',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=20)),
-                ('text', models.CharField(max_length=300)),
-                ('sumber', models.CharField(max_length=50)),
+                ('bulan', models.CharField(max_length=9)),
+                ('tahun', models.CharField(max_length=4)),
+                ('penambahanKasusPositif', models.CharField(max_length=9)),
+                ('PositifKumulatif', models.CharField(max_length=9)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='VaksinData',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('bulan', models.CharField(max_length=9)),
+                ('tahun', models.CharField(max_length=4)),
+                ('vaksin_1_kali', models.CharField(max_length=9)),
+                ('vaksin_2_kali', models.CharField(max_length=9)),
+                ('belum_vaksin', models.CharField(max_length=9)),
             ],
         ),
     ]

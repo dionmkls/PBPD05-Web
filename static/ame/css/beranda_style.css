@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500&display=swap');
+
+* {
+    font-family: 'Baloo Bhaina 2', cursive;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    background-color: #F3EFF5;
+}
+
+.isi-beranda {
+    /* width:100%; */
+    min-height: 100vh;
+    padding: 40px 40px;
+    margin: 8px;
+    position:relative;
+}
+
+.judul {
+    font-family: 'Baloo Bhaina 2', cursive;
+    text-align: center;
+    margin-top: 50px;
+    color: #71b7e6;
+}
+
+.qwerty {
+    margin-top: 50px;
+    padding-right: 40%;
+}
+
+
+
+.informasi-vaksin {
+    margin-top: 50px;
+    padding-left: 40%;
+    text-align: right;
+}
+
+.judul-infromasi {
+    font: bold;
+}
+
+.ayo-vaksin-image {
+    width: 75%;
+    height: 75%;
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-text {
+    margin-top: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.btn-delete {
+    margin: 8px 0;
+    display: inline-block;
+    background-color: #cc4444;
+    border: 2px solid #cc4444;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.btn-delete:hover {
+    color: #cc4444;
+    background-color: white;
+}

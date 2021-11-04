@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{% static 'rheina\style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="navbar"></div>
+    {% include "navbar.html" %}
+    <section class="Forum-Heading">
+        <div class="text-heading-sapa">
+            <p>
+                Selamat Datang di
+            </p>
+        </div>
+        <div class="text-heading-judul">
+            <p>
+                FORUM!
+            <p>
+        </div>
+        <div class="text-heading-penjelasan">
+            <p>
+            Forum ini berisi cerita, saran, dan pengalaman dari berbagai kalangan untuk membantu dan menyemangati teman-teman dalam menghadapi pandemi COVID!
+            </p>
+        </div>
+        <div class="illustration-heading">
+            <img src="../../static/rheina/assets/illustration.svg" alt="">
+
+        </div>
+        <a href="/forum/add-forum/">
+            <button class="btn-isi-forum">
+                Yuk Berbagi Cerita!
+            </button>
+        </a>
+    </section>
+
+    <section class="ForumCard">
+        <div class="container">
+
+            {% for data in forums %}
+            <div class="forum-card">
+                <div class="hiasan">
+                    <div class="isi-forum">
+                        <div class="judul" id="judul_card1">
+                            {{data.ForumTitle}}
+                        </div>
+                        <div class="penulis" id="penulis_card1" >
+                            {{data.ForumFrom}}
+                        </div>
+                        <div class="isi" id="isi_card1">
+                            {{data.ForumMessage}}
+                        </div>
+                        <button class="btn-liat-lengkap" id="btn-open" onclick="opencard($(this).siblings('.judul').html(), $(this).siblings('.penulis').html(), $(this).siblings('.isi').html())">
+                            Baca Selengkapnya
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <div class="overlay">
+        <div class="konten-popup">
+            <div class="btn-close" data-close>&times;</div>
+            <div class="judul-popup">
+
+            </div>
+            <div class="penulis-popup">
+
+            </div>
+            <div class="isi-popup">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+    function opencard(judul,penulis,isi){
+        document.querySelector('.judul-popup').innerHTML = judul;
+        document.querySelector('.penulis-popup').innerHTML = penulis;
+        document.querySelector('.isi-popup').innerHTML = isi;
+        document.querySelector('.overlay').style.display ='flex';
+    }
+        document.querySelector('.btn-close').addEventListener('click', function(){
+        document.querySelector('.overlay').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
+{% include "footer.html" %}
