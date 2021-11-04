@@ -1,48 +1,61 @@
-body{
-    width:100%;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.isi-beranda{
-    min-height:2000px;
-    padding:40px 40px;
-    margin: 10px;
-    
-    background-color: #edf6fa;
+body {
+    font-family: 'Baloo Bhaina 2', cursive;
+    background-color: #F3EFF5;
+}
+
+.isi-beranda {
+    /* width:100%; */
+    min-height: 100vh;
+    padding: 40px 40px;
+    margin: 8px;
     position:relative;
 }
 
-h1{
+h1 {
     text-align: center;
+    margin-top: 50px;
+    color: #71b7e6;
 }
 
-
-
-.informasi-Covid-19{
+.qwerty {
+    margin-top: 50px;
     padding-right: 40%;
 }
 
-.informasi-Vaksin{
+.informasi-vaksin {
+    margin-top: 50px;
     padding-left: 40%;
     text-align: right;
 }
 
-.judul-infromasi{
+.judul-infromasi {
     font: bold;
 }
 
-.ayo-vaksin-image{
+.ayo-vaksin-image {
     width: 75%;
     height: 75%;
     display: block;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
 }
-.center-text{
-    text-align: center
+
+.center-text {
+    margin-top: 20px;
+    text-align: center;
+    color: #000000;
 }
 
-
-.btn-delete{
+.btn-delete {
     margin: 8px 0;
     display: inline-block;
     background-color: #cc4444;
