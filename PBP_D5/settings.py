@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'beranda',
     'rumah_sakit',
     # 'oksigen',
-    # 'forum',
+    'forum',
     'apd',
 ]
 
