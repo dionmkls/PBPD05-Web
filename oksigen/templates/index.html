@@ -1,25 +1,139 @@
+{% load static %}
+
+{% include 'navbar.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Friend List</title>
-  </head>
-  <body>
-    <table>
-      <tr>
-        <th>URL</th>
-        <th>Alamat</th>
-        <th>Telepon</th>
-      </tr> 
-      {% if oksigens  %}
-        {% for oksigen in oksigens %}
-          <tr>
-            <td>{{ oksigen.url }}</td>
-            <td>{{ oksigen.alamat }}</td>
-            <td>{{ oksigen.telepon }}</td>
-          </tr>
-        {% endfor %}
-      {% endif %}
-    </table>
-  </body>
+    <head>
+        <meta charset="utf-8">
+
+        <script src="{% static 'JS.js' %}" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS.css' %}">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container">
+              <h3 class="site-title">Tempat Oksigen</h3>
+              <br>
+          </div>
+        </header>
+        <nav class="main-nav">
+          <div class="container">
+            <ul>
+              <li class="mobile-button"><a href="#">Menu</a></li>
+            <li><a href="#jakarta">Jakarta</a></li>
+            <li><a href="#bogor">Bogor</a></li>
+            <li><a href="#depok">Depok</a></li>
+            <li><a href="#tangerang">Tangerang</a></li>
+            <li><a href="#bekasi">Bekasi</a></li>
+          </ul>
+          </div>
+        </nav>
+        
+        <section class="content">
+          <br>
+          <br>
+        
+          <article class="post">
+            <div class="container">
+                <h2 id="jakarta">Jakarta</h2>
+              <div class="columns">
+                <div class="item">
+                  <h4 class="item-title"></h4>
+                  {% if oksigens  %}
+                    {% for oksigen in oksigens %}
+                        <p>{{ oksigen.url }}</p>
+                        <p>{{ oksigen.alamat }}</p>
+                        <p>{{ oksigen.telepon }}</p>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>   
+          </article>  
+         
+          <article class="post"> 
+            <article class="post">
+              <div class="container">
+                  <h2 id="bogor">Bogor</h2>
+                <div class="columns">
+                  <div class="item">
+                    <h4 class="item-title"></h4>
+                    {% if oksigens  %}
+                      {% for oksigen in oksigens %}
+                        <p>{{ oksigen.url }}</p>
+                        <p>{{ oksigen.alamat }}</p>
+                        <p>{{ oksigen.telepon }}</p>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>   
+            </article>  
+          </article>
+
+          <article class="post"> 
+            <article class="post">
+              <div class="container">
+                  <h2 id="depok">Depok</h2>
+                <div class="columns">
+                  <div class="item">
+                    <h4 class="item-title"></h4>
+                    {% if oksigens  %}
+                      {% for oksigen in oksigens %}
+                        <p>{{ oksigen.url }}</p>
+                        <p>{{ oksigen.alamat }}</p>
+                        <p>{{ oksigen.telepon }}</p>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>   
+            </article>  
+          </article>
+
+          <article class="post"> 
+            <article class="post">
+              <div class="container">
+                  <h2 id="tangerang">Tangerang</h2>
+                <div class="columns">
+                  <div class="item">
+                    <h4 class="item-title"></h4>
+                    {% if oksigens  %}
+                      {% for oksigen in oksigens %}
+                        <p>{{ oksigen.url }}</p>
+                        <p>{{ oksigen.alamat }}</p>
+                        <p>{{ oksigen.telepon }}</p>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>   
+            </article>  
+          </article>
+
+          <article class="post"> 
+            <article class="post">
+              <div class="container">
+                  <h2 id="bekasi">Bekasi</h2>
+                <div class="columns">
+                  <div class="item">
+                    <h4 class="item-title"></h4>
+                    {% if oksigens %}
+                      {% for oksigen in oksigens %}
+                        <p>{{ oksigen.url }}</p>
+                        <p>{{ oksigen.alamat }}</p>
+                        <p>{{ oksigen.telepon }}</p>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>   
+            </article>  
+          </article>
+
+        </section>
+    </body>
 </html>
+{% include 'footer.html' %}

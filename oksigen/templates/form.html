@@ -1,5 +1,27 @@
-<form action = "" method = "GET">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type = "submit" value = "Submit">
-</form>
+{% load static %}
+
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="{% static 'JS.js' %}" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS.css' %}">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container">
+              <h3 class="site-title">Tempat Oksigen</h3>
+              <br>
+          </div>
+        </header><form action = "" method = "GET">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type = "submit" value = "Submit">
+        </form>
+    </body>
+</html>
+{% include 'footer.html' %}
