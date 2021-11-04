@@ -7,7 +7,7 @@ var vaksin1 = 122464119-vaksin2;
 var vaksin1 = 208265720 - (vaksin1+vaksin2)
 
 let myChart = new Chart(ctx, {
-  type: 'pie',
+  type: 'doughnut',
   data: {
     datasets: [{
       

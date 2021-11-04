@@ -1,14 +1,10 @@
-body{
-    width:100%;
-}
+
 
 .isi-beranda{
-    min-height:2000px;
-    padding:40px 40px;
-    margin: 10px;
-    
-    background-color: #edf6fa;
+    min-height:1000px;
+    padding: 40px 40px;
     position:relative;
+    padding-top: 150px;
 }
 
 h1{
@@ -39,6 +35,10 @@ h1{
 }
 .center-text{
     text-align: center
+}
+
+p{
+    font-size: 20px;
 }
 
 
