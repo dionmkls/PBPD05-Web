@@ -6,6 +6,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+.navbar{
+    background : rgb(65, 158, 219);
+    padding: 0;
+}
 
 .Forum-Heading{
     padding-top:15%;
@@ -16,17 +20,18 @@
 .text-heading-sapa {
     top: 50%;
     left: 20%;
-    Font-style: Medium;
-    Font-size: 35px;
+    font-weight: 300;
+    color: #034460;
+    Font-size: 30px;
     padding-left: 10%;
 }
 
 .text-heading-judul {
     top: 50%;
     left: 20%;
-    Font-style: Bold;
+    font-weight: 700;
     color: #034460;
-    Font-size: 45px;
+    Font-size: 65px;
     padding-left: 10%;
 }
 

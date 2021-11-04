@@ -14,7 +14,6 @@ def add_forum(request):
     form = forumForm(request.POST or None)
     if form.is_valid and request.method == 'POST':
         form.save()
-        print("VALID")
         return HttpResponseRedirect('/forum')
     context = {'form' : form}
     return render(request, 'forum_form.html', context)

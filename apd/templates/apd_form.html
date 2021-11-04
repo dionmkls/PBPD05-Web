@@ -10,11 +10,11 @@
     </head>
     <body>
     <div>
-    <div class="px-5 py-2 mt-5" style="background-color: white;">
-    <h1">
+    <div class="px-5 py-2" style="background-color: #f3eff5;">
+    <h1 style="padding-top: 55px;">
         Form Menambahkan Penyedia APD
     </h1>
-    <p  style="padding-top: 50px;">
+    <p">
         Jika Anda mengetahui situs penyedia APD, ataupun ingin berbagi link, silahkan isi form ini
     </p>
     </div>
@@ -27,7 +27,7 @@
                 {{ form.jenis.errors }}
                 <label for="{{ form.jenis.id_for_label }}" class="form-label" aria-describedby="jenisHelp">Jenis APD: </label>
                 {{ form.jenis }}
-                <div id="jenisHelp" class="form-text">Format isiannya Jenis NamaPenjual</div>
+                <div id="jenisHelp" class="form-text light">Format isiannya Jenis NamaPenjual</div>
             </div>
             <div class="mb-3">
                 {{ form.lokasi.errors }}
@@ -45,7 +45,7 @@
                 {{ form.img_source }}
                 <div id="imgHelp" class="form-text">Bila tidak ada gambar, isi saja "#"</div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-light">Submit</button>
         </form>
     </div>
     </div>

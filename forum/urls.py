@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, add_forum, liatforum
+from .views import index, add_forum
 
 urlpatterns = [
     path('', index, name='index'),
