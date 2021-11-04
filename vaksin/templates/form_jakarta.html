@@ -1,5 +1,5 @@
 {% load static %}
-{% include 'navbar_vaksin.html' %}
+{% include 'navbar2.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,37 +26,64 @@
                   </div>
                 </div>
               </td>
-              <td><h1> Vaccine Form</h1></td>
+              <td><h2> Vaccine Form</h2></td>
             </tr>
           </table>
         </div>
         <div class="formContent">
-          <form action="" method="POST">
-              {% csrf_token %}
-              <p>Nama</p>
-              <p>{{ form.nama }}</p>
+          <form action="" method="POST" id="form-jakarta">
+            {% csrf_token %}
+            <p>Nama</p>
+            <p>{{ form.nama }}</p>
 
-              <p>URL</p>
-              <p>{{ form.url }}</p>
+            <p>URL</p>
+            <p>{{ form.url }}</p>
 
-              <p>Alamat Lengkap</p>
-              <p>{{ form.alamat }}</p>
+            <p>Alamat Lengkap</p>
+            <p>{{ form.alamat }}</p>
 
-              <p>Nomor Telepon</p>
-              <p>{{ form.nomorTelp }}</p>
+            <p>Nomor Telepon</p>
+            <p>{{ form.nomorTelp }}</p>
 
-              <p>Jenis Vaksin</p>
-              <p>{{ form.jenis }}</p>
+            <p>Jenis Vaksin</p>
+            <p>{{ form.jenis }}</p>
 
-              <p>Syarat Peserta</p>
-              <p>{{ form.syaratPeserta }}</p>
+            <p>Syarat Peserta</p>
+            <p>{{ form.syaratPeserta }}</p>
 
-              <table align="center">
-                <tr><td><input type="submit"> </td></tr>
-              </table>
+            <div id="center-submit">
+              <input type="submit">
+            </div>
           </form>
         </div>
       </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script>
+      const form = document.getElementById('form-jakarta');
+      form.addEventListener("submit", submitHandler);
+
+      function submitHandler(e) {
+        e.preventDefault();
+        $.ajax({
+          headers     : { "X-CSRFToken": $.cookie("csrftoken") },
+          type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+          url         : '{% url "add_jakarta" %}', // the url where we want to POST
+          data        : $('form').serialize(), // our form data
+          dataType    : 'json', // what type of data do we expect back from the server
+          success     : successFunction
+        });
+      }
+
+      function successFunction(msg) {
+        if (msg.message === 'success') {
+          alert(msg.nama + " berhasil ditambahkan!");
+          form.reset();
+        }
+      }
+    </script>
+    {% include 'footer.html' %}
   </body>
 </html>

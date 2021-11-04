@@ -1,10 +1,12 @@
-body {
-    background-color: #222222;
-}
-
 p {
     text-align: center;
     font-size: 20px;
+}
+
+td h2 {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0px;
 }
 
 .container{
@@ -29,16 +31,15 @@ p {
     background-position: center;
 }
 .formHeader {
-    font-size: 20px;
-    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
     text-align: center;
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    font-weight: 700;
+    background-color: rgb(29, 29, 29);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    /* padding-left: 10px;
-    padding-right: 50px; */
     padding: 5px;
 }
 .formContent {
@@ -62,6 +63,13 @@ p input[type=text] {
     padding-left: 20px;
 
 }
+
+#center-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 1112px) {
     p input[type=text] {
         width: 600px;
