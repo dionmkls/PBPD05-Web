@@ -127,6 +127,7 @@ h3 {
   width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 1em 1em 1em 1em;
   /*
   .item {
     padding: em(25px);
