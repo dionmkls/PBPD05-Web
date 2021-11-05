@@ -21,15 +21,4 @@ class Migration(migrations.Migration):
                 ('PositifKumulatif', models.CharField(max_length=9)),
             ],
         ),
-        migrations.CreateModel(
-            name='VaksinData',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('bulan', models.CharField(max_length=9)),
-                ('tahun', models.CharField(max_length=4)),
-                ('vaksin_1_kali', models.CharField(max_length=9)),
-                ('vaksin_2_kali', models.CharField(max_length=9)),
-                ('belum_vaksin', models.CharField(max_length=9)),
-            ],
-        ),
     ]
