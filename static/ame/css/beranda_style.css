@@ -5,7 +5,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
+
 
 body {
     
@@ -13,11 +15,11 @@ body {
 }
 
 .isi-beranda {
-    /* width:100%; */
     min-height: 100vh;
     padding: 40px 40px;
     margin: 8px;
     position:relative;
+    padding-top: 150px;
 }
 
 .judul {
@@ -25,9 +27,12 @@ body {
     text-align: center;
     margin-top: 50px;
     color: #71b7e6;
+    font-size: 70px;
+    font: bold;
+
 }
 
-.qwerty {
+.informasi-Covid-19 {
     margin-top: 50px;
     padding-right: 40%;
 }
@@ -40,8 +45,14 @@ body {
     text-align: right;
 }
 
-.judul-infromasi {
+.judul{
     font: bold;
+    font-size: 40px;
+}
+
+.text{
+    font-size: 20px;
+    text-align: justify;
 }
 
 .ayo-vaksin-image {
@@ -53,26 +64,38 @@ body {
     margin-right: auto;
 }
 
+
 .center-text {
     margin-top: 20px;
     text-align: center;
-    color: #000000;
 }
 
-.btn-delete {
-    margin: 8px 0;
+.judul-statistik{
+    margin-top: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 40px;
+
+}
+
+.btn-add {
+    margin-left: auto;
+    margin-right: auto;
     display: inline-block;
-    background-color: #cc4444;
-    border: 2px solid #cc4444;
-    border-radius: 4px;
+    background-color: #71b7e6;
+    border: 2px solid #71b7e6;
+    border-radius: 5px;
     box-sizing: border-box;
     cursor: pointer;
     color: white;
     font-weight: bold;
-    padding: 5px;
+    padding: 8px;
+    font-size: 20px;
+
+    
 }
 
-.btn-delete:hover {
-    color: #cc4444;
+.btn-add:hover {
+    color: #71b7e6;
     background-color: white;
 }
