@@ -1,12 +1,5 @@
 body {
-    background-color: #222222;
-}
-
-h1 {
-    color: white;
-}
-h3 {
-    color: white;
+    margin-top: 70px; /* biar ga kena navbar */
 }
 
 .ketVaksin {
@@ -18,68 +11,18 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
-
-h2 { 
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: white;
+.col {
+    min-width: 330px;
+    /* max-width: 330px; */
+    transition: 0.2s;
 }
-
-.container{
-    width: 90%;
-    margin: auto;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.cards {
-    border: none;
-    width: 350px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    align-items: center;   
-    justify-content: flex-end; 
-    /* box-shadow: 0 0 10px rgb(59, 59, 59); */
-    transition: 300ms all;
-    background-size: cover;
-    background-position: center;
-}
-.card-content {
-    background-color: rgb(255, 255, 255);
-    padding: 10px 15px;
-    text-align: left;
-    width: 100%;
-    height: 100%;
-    transition: 300ms all;
-    
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-.cards:hover {
+.col:hover {
     transform: scale(1.1);
 }
-.cards:hover .card-content{
-    background-color: rgb(77, 77, 77);
-    color: white; 
-}
-
-.namaTempat {
-    font-size: 20px;
-    color: #3a3a3a;
-    text-align: center;
-    height: 30%;
-    padding-top: 7%;
-    width: 100%;
-    background-color: hsl(101, 100%, 73%);
-    font-weight: 700;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+.card-body:hover {
+    background-color: #f5f5f5;
 }
 
 .gmaps {
@@ -87,9 +30,8 @@ h2 {
     color: white;
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .gmaps:hover {
@@ -101,48 +43,78 @@ h2 {
 }
 
 .tempat-gmaps {
-    display: block;
     text-align: center;
-    margin: 20px;
 }
 
-/* .but-more {
-    background-color: rgb(31, 31, 31);
+.delete-button {
+    background-color: #ffb81f;
+    color: white;
     border: none;
-    color: rgb(255, 255, 255);
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-} */
-
-button:hover {
-    background-color: #c2e8ff;
-    color: rgb(0, 0, 0);
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
-button:active {
+.delete-button:hover {
+    background-color: #ff2c2c;
+}
+.delete-button:active {
     transform: scale(0.9);
 }
 
-@media screen and (max-width: 440px) {
-    .card-content {
-        font-size: 12px;
-    }
-
-    .namaTempat p{
-        font-size: 16px;
-        padding-top: 4%;
-    }
+table tbody tr td div a {
+    margin-right: 15px;
 }
 
-#isi-modal {
-    padding: 30px;
-    text-align: center;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#h-modal {
-    color: black;
-    padding-bottom: 10px;
+/* buat di file yg pake js */
+.containerJak{
+    width: 72%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
+.containerBog{
+    width: 72%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerDep{
+    width: 72%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerTag{
+    width: 72%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerBek{
+    width: 72%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
