@@ -1,0 +1,5 @@
+<form name="form" action = "" method = "GET" onsubmit="return required()">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type = "submit" value = "Submit" class="btn px-5 btn-primary">
+</form>
