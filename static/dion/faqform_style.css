@@ -14,7 +14,7 @@ body {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.container {
+.form-box {
     max-width: 700px;
     width: 100%;
     background: #F3EFF5;
@@ -22,13 +22,13 @@ body {
     border-radius: 5px;
 }
 
-.container .title {
+.form-box .title {
     font-size: 25px;
     font-weight: 500;
     position: relative;
 }
 
-.container .title::before {
+.form-box .title::before {
     content: '';
     position: absolute;
     left: 0;
@@ -38,7 +38,7 @@ body {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.content-action {
+.input-content {
     font-weight: 700;
     text-align: left;
     margin-left: auto;
