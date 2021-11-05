@@ -78,7 +78,7 @@ button.btn-isi-forum:hover{
     align-items: center;
 }
 
-.container{
+.container-card{
     position: relative;
     width: 100%;
     padding: 20px;
@@ -112,7 +112,7 @@ button.btn-isi-forum:hover{
     position: relative;
     width: 90%;
     height: 100%;
-    background-color:  #034460;
+    background: linear-gradient(135deg, #47b6e6, #ba44e9);;
 }
 
 .isi-forum{
@@ -141,6 +141,20 @@ button.btn-isi-forum:hover{
     border-radius: 48px;
     margin-top: 25px;
     transform: translateX(150%);
+}
+
+.btn-delete{
+    width: 30%;
+    padding: 7px 20px;
+    background: #c42f2f;
+    border: none;
+    color:white;
+    font-style: Bold;
+    font-size: 10px;
+    
+    border-radius: 48px;
+    margin-top: 25px;
+    transform: translateX(-45%);
 }
 
 .judul{
@@ -240,3 +254,31 @@ button.btn-isi-forum:hover{
     border-radius: 28px;
 }
 
+.overlay-alert{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.popup-alert{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    width: 300px;
+    height: 100px;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 35px;
+
+    text-align: center;
+}
