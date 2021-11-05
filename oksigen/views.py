@@ -13,7 +13,7 @@ def add_oksigen(request):
     form = OksigenForm(request.GET or None, request.FILES or None)
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect('/oksigen')
+        return HttpResponseRedirect('/tempat-oksigen')
   
     context['form']= form
     return render(request, "form.html", context)

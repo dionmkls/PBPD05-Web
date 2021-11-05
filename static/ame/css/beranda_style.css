@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500&display=swap');
 
 * {
+    font-family: 'Baloo Bhaina 2', cursive;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,7 +10,7 @@
 
 
 body {
-    font-family: 'Baloo Bhaina 2', cursive;
+    
     background-color: #F3EFF5;
 }
 
@@ -21,7 +22,8 @@ body {
     padding-top: 150px;
 }
 
-.judul-website{
+.judul {
+    font-family: 'Baloo Bhaina 2', cursive;
     text-align: center;
     margin-top: 50px;
     color: #71b7e6;
@@ -34,6 +36,8 @@ body {
     margin-top: 50px;
     padding-right: 40%;
 }
+
+
 
 .informasi-vaksin {
     margin-top: 50px;
