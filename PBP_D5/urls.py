@@ -37,5 +37,5 @@ urlpatterns = [
     path('forum/', include('forum.urls')),
     path('rumah-sakit/', include('rumah_sakit.urls')),
     path('tempat-oksigen/', include('oksigen.urls')),
-    path('tempat-oksigen/json', include('oksigen.urls')),
+    path('tempat-oksigen/json', include('oksigen.urls'))
 ]
