@@ -41,24 +41,31 @@
     </section>
 
     <section class="ForumCard">
-        <div class="container">
+        <div class="container-card">
 
-            {% for data in forums %}
+            {% for data in forumforum %}
             <div class="forum-card">
                 <div class="hiasan">
                     <div class="isi-forum">
-                        <div class="judul" id="judul_card1">
+                        <div class="judul" id="judul_card">
                             {{data.ForumTitle}}
                         </div>
-                        <div class="penulis" id="penulis_card1" >
+                        <div class="penulis" id="penulis_card" >
                             {{data.ForumFrom}}
                         </div>
-                        <div class="isi" id="isi_card1">
+                        <div class="isi" id="isi_card">
                             {{data.ForumMessage}}
                         </div>
                         <button class="btn-liat-lengkap" id="btn-open" onclick="opencard($(this).siblings('.judul').html(), $(this).siblings('.penulis').html(), $(this).siblings('.isi').html())">
                             Baca Selengkapnya
                         </button>
+
+                        {%if user.is_authenticated%}
+                        <a href="{%url 'delete_forum' data.id %}">
+                        <button class="btn-delete">Delete</button>
+                        </a>
+                        {%endif%}
+
                     </div>
                 </div>
             </div>

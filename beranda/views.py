@@ -29,48 +29,31 @@ def add_covid_data(request):
 
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect('/beranda')
+        return HttpResponseRedirect('/beranda/edit-covid-data/')
 
     response['form']= form
     return render(request, "covid_forms.html", response)
 
 @login_required(login_url='/admin/login/')
 def update_covid_data(request, id):
-    # dictionary for initial data with
-    # field names as keys
- 
-    # fetch the object related to passed id
     obj = get_object_or_404(CovidData, id = id)
- 
-    # pass the object as instance in form
     form = DataCovidForm(request.POST or None, instance = obj)
- 
-    # save the data from the form and
-    # redirect to detail_view
+
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("/"+id)
+        return HttpResponseRedirect('/beranda/edit-covid-data/')
  
-    # add form dictionary to context
     response = {'form': form}
- 
-    return render(request, "beranda.html", response)
+    return render(request, "update.html", response)
 
 @login_required(login_url='/admin/login/')
 def delete_covid_data(request, id):
-    # dictionary for initial data with
-    # field names as keys
     response ={}
  
-    # fetch the object related to passed id
     obj = get_object_or_404(CovidData, id = id)
  
     if request.method =="POST":
-        # delete object
         obj.delete()
-        # after deleting redirect to
-        # home page
-        return HttpResponseRedirect("/")
+        return HttpResponseRedirect("/beranda/edit-covid-data/")
  
-    return render(request, "beranda.html", response)
-
+    return render(request, "delete.html", response)

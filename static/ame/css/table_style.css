@@ -34,3 +34,69 @@
 .content-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
+
+.btn-add {
+    display: inline-block;
+    background-color: #71b7e6;
+    border: 2px solid #71b7e6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 20px;
+    margin-left: 65%;
+    margin-right: auto;
+    
+}
+
+.btn-add:hover {
+    color: #71b7e6;
+    background-color: white;
+}
+
+
+a[type="button-update"] {
+    background-color: #7aeb9f; /* Green */
+    border: none;
+    color: black;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+a[type="button-update"]:hover {
+    color: white;
+    background-color: #3ca15e;
+}
+
+a[type="button-delete"] {
+    background-color: #e4866a;
+    border: none;
+    color: black;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+a[type="button-delete"]:hover {
+    color: white;
+    background-color: #eb673f;
+}
+
+.judul-statistik{
+    margin-top: 100px;
+    text-align: center;
+    font: bold;
+    font-size: 40px;
+
+}
