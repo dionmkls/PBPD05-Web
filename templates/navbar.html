@@ -4,7 +4,6 @@
 <html>
 
 <head>
-    <title>FAQ</title>
     <link rel="stylesheet" href="{% static 'css\navbar_style.css' %}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -67,20 +66,19 @@
                                 aria-haspopup="true" aria-expand="false">Vaksin</a>
                             <ul class="dropdown-menu" aria-label="navbardropdownlink">
                                 <li><a class="dropdown-item" href="/lokasi-vaksin/">Lokasi Vaksin</a></li>
-                                <li><a class="dropdown-item" href="/lokasi-vaksin/add_jakarta/">Form Jakarta</a></li>
-                                <li><a class="dropdown-item" href="/lokasi-vaksin/add_bogor/">Form Bogor</a></li>
-                                <li><a class="dropdown-item" href="/lokasi-vaksin/add_depok/">Form Depok</a></li>
-                                <li><a class="dropdown-item" href="/lokasi-vaksin/add_tangerang/">Form Tanggerang</a>
-                                </li>
-                                <li><a class="dropdown-item" href="/lokasi-vaksin/add_bekasi/">Form Bekasi</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a class="dropdown-item" href="/lokasi-vaksin/add-vaksin-jakarta">Form</a></li>
+                                {% endif %}
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="dropdown-item dropdown-toggle" id="navbardropdownlink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expand="false">Oksigen</a>
                             <ul class="dropdown-menu" aria-label="navbardropdownlink">
-                                <li><a class="dropdown-item" href="/tempat-oksigen/">Lokasi oksigen</a></li>
-                                <li><a class="dropdown-item" href="/tempat-oksigen/add_oksigen/">Form</a></li>
+                                <li><a class="dropdown-item" href="/tempat-oksigen/">Lokasi Oksigen</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a class="dropdown-item" href="/tempat-oksigen/add">Form</a></li>
+                                {% endif %}
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -88,7 +86,9 @@
                                 aria-haspopup="true" aria-expand="false">APD</a>
                             <ul class="dropdown-menu" aria-label="navbardropdownlink">
                                 <li><a class="dropdown-item" href="/apd/">Lokasi APD</a></li>
-                                <li><a class="dropdown-item" href="/add/add/">Form</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a class="dropdown-item" href="/apd/add/">Form</a></li>
+                                {% endif %}
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -96,19 +96,33 @@
                                 aria-haspopup="true" aria-expand="false">Rumah Sakit</a>
                             <ul class="dropdown-menu" aria-label="navbardropdownlink">
                                 <li><a class="dropdown-item" href="/rumah-sakit/"> List Rumah Sakit</a></li>
-                                <li><a class="dropdown-item" href="/rumah-sakit/rs_form/">Tambah Rumah Sakit</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a class="dropdown-item" href="/rumah-sakit/add/">Tambah Rumah Sakit</a></li>
+                                {% endif %}
                             </ul>
                         </li>
                     </ul>
                 </li>
-
+                
                 <li class="nav-item">
                     <a class="nav-link" href="/forum/">Forum</a>
                 </li>
 
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbardropdownlink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expand="false">FAQ</a>
+                    <ul class="dropdown-menu" aria-label="navbardropdownlink">
+                        <li><a class="dropdown-item" href="/faq/">FAQ</a></li>
+                        <li><a class="dropdown-item" href="/faq/add-faq">Tambah FAQ</a></li>
+                    </ul>
+                </li>
+                {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="/faq/">FAQ</a>
                 </li>
+                {% endif %}
+
 
             </ul>
 

@@ -1,0 +1,61 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'qosim/css/index.css' %}">
+  <title>{{ page_title|default:"DP5 PBP" }}</title>
+</head>
+<body>
+  <!-- title -->
+  <div class="jumbotron jumbotron-fluid" style="height: 200px;">
+    <div class="container">
+      <h1 class="display-4 text-center" style="margin: 30px 0;">{{ page_title|default:"DP5 PBP" }}</h1>
+      <!-- <p class="lead">
+        Di bawah ini adalah form untuk mengisi rumah sakit baru yang menyediakan ruang ICU atau kamar kosong untuk pasien.
+      </p> -->
+    </div>
+  </div>
+    
+  <div class="container">
+    <a class="btn btn-outline-primary" href="/rumah-sakit/" style="margin-bottom: 50px;" role="button">Kembali</a>
+
+    <div class="row row-cols-1 g-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ rumah_sakit.nama }}</h5>
+          <p class="card-text">
+            {{ rumah_sakit.lokasi }} <br>
+            {{ rumah_sakit.alamat }} <br>
+            {{ rumah_sakit.no_telp }} <br>
+            {{ rumah_sakit.url_gmaps }} <br>
+            Tersedia:
+            {% if rumah_sakit.tersedia == "I" %}
+            ICU
+            {% elif rumah_sakit.tersedia == "K" %}
+            Kamar
+            {% else %}
+            ICU dan Kamar
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <form method="POST" action="" onsubmit="alert('Rumah sakit berhasil dihapus')">
+      {% csrf_token %}
+      Apakah anda yakin ingin menghapus rumah sakit ini?
+      <button type="submit" class="btn btn-outline-primary" style="margin-bottom: 20px;">Hapus</button>
+    </form>
+  </div>
+    
+  {% include 'footer.html' %}
+
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'js/jQuery.js' %}"></script>
+
+</body>
+</html>

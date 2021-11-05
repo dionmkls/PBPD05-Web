@@ -1,9 +1,8 @@
 from django.urls import path
-from .views import add_jakarta, add_bekasi, add_bogor, add_depok, add_tangerang, index, index2
+from .views import add_jakarta, add_bekasi, add_bogor, add_depok, add_tangerang, index2
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('2', index2, name='index2'),
+    path('', index2, name='index2'),
     path('add-vaksin-jakarta', add_jakarta, name='add_jakarta'),
     path('add-vaksin-bogor', add_bogor, name='add_bogor'),
     path('add-vaksin-depok', add_depok, name='add_depok'),

@@ -1,5 +1,5 @@
 {% load static %}
-{% include "navbar3.html" %}
+{% include "navbar.html" %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,11 +12,14 @@
 </head>
 <body>
 
-    <h1 class="title" >Notes Form</h1>
+    <h1 class="title" >Covid Data Form</h1>
     <form action="" method="POST">
       {% csrf_token %}
       {{ form }}
       <input type="submit" value="Submit">
+
     </form>
+
+    <script src="{% static 'ame\js\statistik_covid.js' %}"></script>
   </body>
 </html>

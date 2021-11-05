@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-  <link rel="stylesheet" href="{% static 'qosim/index.css' %}">
+  <link rel="stylesheet" href="{% static 'qosim/css/index.css' %}">
   <title>{{ page_title|default:"DP5 PBP" }}</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
   <div class="container">
     <a class="btn btn-outline-primary" href="/rumah-sakit/" style="margin-bottom: 50px;" role="button">Kembali</a>
 
-    <form method="POST" action="">
+    <form method="POST" action="" onsubmit="alert('Rumah sakit berhasil ditambah')">
       {% csrf_token %}
 
       {% for form in rumah_sakit_form %}
@@ -34,13 +34,14 @@
       </div>
       {% endfor %}
 
-      <button type="submit" class="btn btn-outline-primary" style="margin-bottom: 20px;">Kirim</button>
+      <button type="submit" class="btn btn-outline-primary" style="margin-bottom: 20px;">Tambah</button>
     </form>
   </div>
     
   {% include 'footer.html' %}
 
-  <script src="{& static 'js/bootstrap.js' &}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'js/jQuery.js' %}"></script>
 
 </body>
 </html>

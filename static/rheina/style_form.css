@@ -7,13 +7,19 @@
     box-sizing: border-box;
 }
 
+.navbar{
+    background : rgb(65, 158, 219);
+    padding: 0;
+}
+
 .bagian-forum{
+    margin-top:1%;
     display: flex;
 }
 
 .penjelasan-forum{
     width: 900px;
-    height: 820px;
+    height: 1000px;
     padding-top:15%;
     padding-right: 10%;
 }
@@ -21,7 +27,7 @@
 .judul {
     top: 50%;
     left: 20%;
-    Font-style: Bold;
+    font-weight: 700;
     color: #034460;
     Font-size: 45px;
     padding-left: 10%;
@@ -63,7 +69,7 @@ button.btn-lihat-forum:hover{
 
 .formnya{
     width: 900px;
-    height: 820px;
+    height: 1000px;
     padding-top: 75px;
     padding-bottom: 75px;
     padding-left: 60px;
