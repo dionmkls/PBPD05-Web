@@ -24,6 +24,7 @@ import faq.urls as faq_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("index/", include(index_urls)),
     re_path(r"^$", index, name="index"),
     path('lokasi-vaksin/', include(vaksin_urls)),
     path('beranda/', include('beranda.urls')),
