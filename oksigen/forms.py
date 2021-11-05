@@ -9,21 +9,30 @@ class OksigenForm(forms.ModelForm):
     error_messages = {
         'required': 'Please Type'
     }
-    input_attrs = {
+    url = {
+        'name' : 'url',
         'type' : 'text',
         'placeholder': 'masukkan data',
-        'class': 'form-control col-sm-5'
+        'class': 'form-control col-sm-4'
+    }
+    alamat = {
+        'name': 'alamat',
+        'type' : 'text',
+        'placeholder': 'masukkan data',
+        'class': 'form-control col-sm-4'
     }
     telepon = {
+        'name': 'telepon',
         'type' : 'text',
         'placeholder': 'masukkan data',
         'class': 'form-control col-sm-1'
     }
+
     DOMISILI_choice = {
         ('Jakarta', 'Jakarta'), ('Bogor', 'Bogor'), ('Depok', 'Depok'), ('Tangerang', 'Tangerang'), ('Bekasi', 'Bekasi')
     }
     
-    url = forms.CharField(label = 'URL', required=False, max_length=70, widget=forms.TextInput(attrs=input_attrs))
-    alamat = forms.CharField(label = 'Alamat', required=False, max_length=70, widget=forms.TextInput(attrs=input_attrs))
+    url = forms.CharField(label = 'URL', required=False, max_length=80, widget=forms.TextInput(attrs=url))
+    alamat = forms.CharField(label = 'Alamat', required=False, max_length=40, widget=forms.TextInput(attrs=alamat))
     telepon = forms.CharField(label = 'Telepon', required=False, max_length=15, widget=forms.TextInput(attrs=telepon))
     domisili = forms.CharField(label = 'Domisili', required=False, widget=forms.Select(choices=DOMISILI_choice))

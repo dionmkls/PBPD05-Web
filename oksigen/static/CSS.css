@@ -110,13 +110,6 @@ h3 {
   }
 }
 
-.cool-photo {
-  background-image: url(http://lorempixel.com/1300/400/abstract)
-}
-.cool-photo2 {
-  background-image: url(http://lorempixel.com/1300/400/food)
-}
-
 .post {
   padding: em(30px);
 }
