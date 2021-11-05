@@ -18,11 +18,6 @@ const handleGetData = () => {
                 data.map(faq => {
                     console.log(faq.id)
                     faqsBox.innerHTML += 
-                    // `<div class="card p-3 mt-3 mb-3">
-                    // ${faq.question}
-                    // <br>
-                    // ${faq.answer}
-                    // </div>`
                 
                     `<div class="faq">
                         <div class="question">

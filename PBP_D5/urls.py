@@ -20,7 +20,6 @@ from hello_world.views import index
 import hello_world.urls as index_urls
 import vaksin.urls as vaksin_urls
 import apd.urls as apd_urls
-import faq.urls as faq_urls
 from faq.views import MainView, PostJsonListView
 # import forum.urls as forum_urls
 
