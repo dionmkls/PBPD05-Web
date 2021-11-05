@@ -7,9 +7,9 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width ,initial-scale = 1.0">
     <title>Lokasi Vaksin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'rakha\style_index.css' %}">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script type="text/JavaScript" src="{% static 'rakha\script.js' %}" ></script>
+
   </head>
   <body>
   <h1 align="center">Vaksin</h1>
@@ -21,104 +21,119 @@
   <br>
   <br>
   <h2 align="center">Jakarta</h2>
-  <div class="container">
-  {% for vaksin in vaksinsJak %}
-    <div class="cards">
-      <div class="namaTempat">
-        <p>{{ vaksin.nama }}</p>
-      </div>
-      <div class="card-content">
-        <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis: {{ vaksin.jenis }}</p>
-        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
-        <div class="tempat-gmaps">
-          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
+  <div class="containerJak">
+
   </div>
   
   <h2 align="center">Bogor</h2>
-  <div class="container">  
-  {% for vaksin in vaksinsBog %}
-    <div class="cards"> 
-      <div class="namaTempat">
-        <p>{{ vaksin.nama }}</p>
-      </div>
-      <div class="card-content">
-        <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis: {{ vaksin.jenis }}</p>
-        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
-        <div class="tempat-gmaps">
-          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
+  <div class="containerBog">  
+    
   </div>
-
+  
   <h2 align="center">Depok</h2>
-  <div class="container"> 
-  {% for vaksin in vaksinsDep %}
-    <div class="cards"> 
-      <div class="namaTempat">
-        <p>{{ vaksin.nama }}</p>
-      </div>
-      <div class="card-content">
-        <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis: {{ vaksin.jenis }}</p>
-        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
-        <div class="tempat-gmaps">
-          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
+  <div class="containerDep"> 
+    
   </div>
-
+  
   <h2 align="center">Tangerang</h2>
-  <div class="container">
-  {% for vaksin in vaksinsTag %}
-    <div class="cards">
-      <div class="namaTempat">
-        <p>{{ vaksin.nama }}</p>
-      </div>
-      <div class="card-content">
-        <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis: {{ vaksin.jenis }}</p>
-        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
-        <div class="tempat-gmaps">
-          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
+  <div class="containerTag">
+  
   </div>
-
+  
   <h2 align="center">Bekasi</h2>
-  <div class="container">
-    {% for vaksin in vaksinsBek %}
-    <div class="cards"> 
-      <div class="namaTempat">
-        <p>{{ vaksin.nama }}</p>
-      </div>
-      <div class="card-content">
-        <p>Alamat: {{ vaksin.alamat }}</p>
-        <p>No. Telepon: {{ vaksin.nomorTelp }}</p>
-        <p>Jenis: {{ vaksin.jenis }}</p>
-        <p>Syarat: {{ vaksin.syaratPeserta }}</p>
-        <div class="tempat-gmaps">
-          <a href="{{ vaksin.url }}" class="gmaps">Google Maps</a>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
+  <div class="containerBek">
+
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
+  <script >
+    function deleteData(kota, id) {
+      $.ajax({
+      type: 'GET',
+      url: '{% url "index2" %}' ,
+      data: {
+        "tujuan" : "delete",
+        "kota" : kota ,
+        "id" : id ,
+      } ,
+      datatype: "json" ,
+      success: function(data) {
+        alert('Lokasi vaksin ' + data.nama + ' berhasil dihapus! Klik OK untuk memperbarui data.');
+        $(".containerJak").empty();
+        $(".containerBog").empty();
+        $(".containerDep").empty();
+        $(".containerTag").empty();
+        $(".containerBek").empty();
+        mintaData();
+      }
+      })
+    }
+
+    function nampilinData(data) {
+      var dynamic = document.querySelector('.containerJak');  
+      var isi = '<div class="row row-cols-1 row-cols-md-3 g-4">';
+      const Jak = data['Jak'];
+      const Bog = data['Bog'];
+      const Dep = data['Dep'];
+      const Tag = data['Tag'];
+      const Bek = data['Bek'];
+
+      for (var i = 0; i < Jak.length; i++) {
+        isi += '<div class="col"><div class="card h-auto"><div class="card-body"><h5 class="card-title">' + Jak[i]['nama'] + '</h5><p class="card-text">Alamat: ' + Jak[i]['alamat'] +'</p><p class="card-text">No. Telepon: ' + Jak[i]['nomorTelp'] + '</p><p class="card-text">Jenis: ' + Jak[i]['jenis'] + '</p><p class="card-text">Syarat: ' + Jak[i]['syaratPeserta'] + '</p><div class="tempat-gmaps"><a href="' + Jak[i]['url'] + '" class="gmaps">Maps</a></div></div></div></div>';
+      }
+      isi += '</div>';
+      dynamic.innerHTML = isi;
+
+      dynamic = document.querySelector('.containerBog');  
+      isi = '<div class="row row-cols-1 row-cols-md-3 g-4">';
+      for (var i = 0; i < Bog.length; i++) {
+        isi += '<div class="col"><div class="card h-auto"><div class="card-body"><h5 class="card-title">' + Bog[i]['nama'] + '</h5><p class="card-text">Alamat: ' + Bog[i]['alamat'] +'</p><p class="card-text">No. Telepon: ' + Bog[i]['nomorTelp'] + '</p><p class="card-text">Jenis: ' + Bog[i]['jenis'] + '</p><p class="card-text">Syarat: ' + Bog[i]['syaratPeserta'] + '</p><div class="tempat-gmaps"><a href="' + Bog[i]['url'] + '" class="gmaps">Maps</a></div></div></div></div>';
+      }
+      isi += '</div>';
+      dynamic.innerHTML = isi; 
+
+      dynamic = document.querySelector('.containerDep');  
+      isi = '<div class="row row-cols-1 row-cols-md-3 g-4">';
+      for (var i = 0; i < Dep.length; i++) {
+        isi += '<div class="col"><div class="card h-auto"><div class="card-body"><h5 class="card-title">' + Dep[i]['nama'] + '</h5><p class="card-text">Alamat: ' + Dep[i]['alamat'] +'</p><p class="card-text">No. Telepon: ' + Dep[i]['nomorTelp'] + '</p><p class="card-text">Jenis: ' + Dep[i]['jenis'] + '</p><p class="card-text">Syarat: ' + Dep[i]['syaratPeserta'] + '</p><div class="tempat-gmaps"><a href="' + Dep[i]['url'] + '" class="gmaps">Maps</a></div></div></div></div>';
+      }
+      isi += '</div>';
+      dynamic.innerHTML = isi;      
+
+      dynamic = document.querySelector('.containerTag');  
+      isi = '<div class="row row-cols-1 row-cols-md-3 g-4">';
+      for (var i = 0; i < Tag.length; i++) {
+        isi += '<div class="col"><div class="card h-auto"><div class="card-body"><h5 class="card-title">' + Tag[i]['nama'] + '</h5><p class="card-text">Alamat: ' + Tag[i]['alamat'] +'</p><p class="card-text">No. Telepon: ' + Tag[i]['nomorTelp'] + '</p><p class="card-text">Jenis: ' + Tag[i]['jenis'] + '</p><p class="card-text">Syarat: ' + Tag[i]['syaratPeserta'] + '</p><div class="tempat-gmaps"><a href="' + Tag[i]['url'] + '" class="gmaps">Maps</a></div></div></div></div>';
+      }
+      isi += '</div>';
+      dynamic.innerHTML = isi; 
+
+      dynamic = document.querySelector('.containerBek');  
+      isi = '<div class="row row-cols-1 row-cols-md-3 g-4">';
+      for (var i = 0; i < Bek.length; i++) {
+        isi += '<div class="col"><div class="card h-auto"><div class="card-body"><h5 class="card-title">' + Bek[i]['nama'] + '</h5><p class="card-text">Alamat: ' + Bek[i]['alamat'] +'</p><p class="card-text">No. Telepon: ' + Bek[i]['nomorTelp'] + '</p><p class="card-text">Jenis: ' + Bek[i]['jenis'] + '</p><p class="card-text">Syarat: ' + Bek[i]['syaratPeserta'] + '</p><div class="tempat-gmaps"><a href="' + Bek[i]['url'] + '" class="gmaps">Maps</a></div></div></div></div>';
+      }
+      isi += '</div>';
+      dynamic.innerHTML = isi; 
+    }
+
+    function mintaData() {
+      $.ajax({
+      type: 'GET',
+      url: '{% url "index2" %}' ,
+      data: {
+        "tujuan": "nampilinData"
+      } ,
+      datatype: "json" ,
+      success: nampilinData
+      })
+    }
+
+    $(document).ready(mintaData);
+  
+  </script>
+  {% include 'footer.html' %}
   </body>
+  
 </html>

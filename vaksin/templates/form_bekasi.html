@@ -1,5 +1,5 @@
 {% load static %}
-{% include 'navbar_vaksin.html' %}
+{% include 'navbar.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,10 @@
     <title>Form Lokasi Vaksin Baru</title>
     <link rel="stylesheet" href="{% static 'rakha\style_form.css' %}">
     <link rel="stylesheet" href="{% static 'rakha\style_navbar_form.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
@@ -26,12 +30,12 @@
                   </div>
                 </div>
               </td>
-              <td><h1> Vaccine Form</h1></td>
+              <td><h2> Vaccine Form</h2></td>
             </tr>
           </table>
         </div>
         <div class="formContent">
-          <form action="" method="POST">
+          <form action="" method="POST" id="form-bekasi">
               {% csrf_token %}
               <p>Nama</p>
               <p>{{ form.nama }}</p>
@@ -51,12 +55,39 @@
               <p>Syarat Peserta</p>
               <p>{{ form.syaratPeserta }}</p>
 
-              <table align="center">
-                <tr><td><input type="submit"> </td></tr>
-              </table>
+              <div id="center-submit">
+                <input type="submit">
+              </div>
           </form>
         </div>
       </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script>
+      const form = document.getElementById('form-bekasi');
+      form.addEventListener("submit", submitHandler);
+
+      function submitHandler(e) {
+        e.preventDefault();
+        $.ajax({
+          headers     : { "X-CSRFToken": $.cookie("csrftoken") },
+          type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+          url         : '{% url "add_bekasi" %}', // the url where we want to POST
+          data        : $('form').serialize(), // our form data
+          dataType    : 'json', // what type of data do we expect back from the server
+          success     : successFunction
+        });
+      }
+
+      function successFunction(msg) {
+        if (msg.message === 'success') {
+          alert(msg.nama + " berhasil ditambahkan!");
+          form.reset();
+        }
+      }
+    </script>
+    {% include 'footer.html' %}
   </body>
 </html>

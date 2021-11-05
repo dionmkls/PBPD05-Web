@@ -15,14 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-from hello_world.views import index 
+from beranda.views import index 
 
-import hello_world.urls as index_urls
+import beranda.urls as index_urls
 import vaksin.urls as vaksin_urls
 import apd.urls as apd_urls
 import faq.urls as faq_urls
-from faq.views import MainView, PostJsonListView
-import forum.urls as forum_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,8 +29,7 @@ urlpatterns = [
     path('lokasi-vaksin/', include(vaksin_urls)),
     path('beranda/', include('beranda.urls')),
     path('apd/', include(apd_urls)),
-    path('faq/', MainView.as_view(), name='main-view'),
-    path('faqs-json/<int:num_posts>/', PostJsonListView.as_view(), name='faqs-json-view'),
+    path('faq/', include(faq_urls)),
     path('forum/', include('forum.urls')),
     path('rumah-sakit/', include('rumah_sakit.urls')),
     path('tempat-oksigen/', include('oksigen.urls')),
