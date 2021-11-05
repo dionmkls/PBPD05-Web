@@ -1,5 +1,5 @@
 {% load static %}
-{% include 'navbar2.html' %}
+{% include 'navbar.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,10 @@
     <title>Form Lokasi Vaksin Baru</title>
     <link rel="stylesheet" href="{% static 'rakha\style_form.css' %}">
     <link rel="stylesheet" href="{% static 'rakha\style_navbar_form.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
@@ -17,7 +21,7 @@
             <tr>
               <td>
                 <div class="dropdown">
-                  <button class="dropbtn-tangerang">Tangerang</button>
+                  <button class="dropbtn">Tangerang</button>
                   <div class="dropdown-content">
                     <a href="/lokasi-vaksin/add-vaksin-jakarta">Jakarta</a>
                     <a href="/lokasi-vaksin/add-vaksin-bogor">Bogor</a>
