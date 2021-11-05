@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="{% static 'rheina\style_form.css' %}">
 </head> 
 <body>
+    <div class="navbar"></div>
+    {% include "navbar.html" %}
     <section class ="bagian-forum">
         <section class ="penjelasan-forum">
             <div class="judul">
-                <h1>
+                <p>
                     YUK BERBAGI CERITA!
-                </h1>
+                </p>
             </div>
             <div class="penjelasan">
                 <p>
@@ -43,3 +45,4 @@
     </section>
 </body>
 </html>
+{% include "footer.html" %}

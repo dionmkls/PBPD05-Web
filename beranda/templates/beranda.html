@@ -1,67 +1,84 @@
 {% load static %}
 
+{% include 'navbar.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda</title>
-    <link rel="stylesheet" href="{% static 'ame\css\beranda_style.css' %}">
 
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="{% static 'ame\css\beranda_style.css' %}">
+</head>
 
 <body>
-  {% include "navbar.html" %}
+
   <div class="isi-beranda">
+
+
+      <p class="judul-website">WEBSITE PANDEMI COVID-19</p>
+
+
+    <div class="informasi-Covid-19">
+      <h3 class="judul">Apa itu COVID-19?</h3>
+      <p class="text">
+        COVID-19 adalah penyakit menular yang disebabkan oleh jenis coronavirus
+        yang baru ditemukan. Virus baru dan penyakit yang disebabkannya ini tidak
+        dikenal sebelum mulainya wabah di Wuhan, Tiongkok, bulan Desember 2019.
+        COVID-19 ini sekarang menjadi sebuah pandemi yang terjadi di banyak negara
+        di seluruh dunia.
+      </p>
+      <p class="link">sumber: https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-for-public </p>    
+    </div>
+
+    <div class="informasi-vaksin">
+      
+      <h3 class="judul">Apa itu Vaksinasi COVID-19?</h3>
+      <p class="text">
+        Vaksinasi Covid-19 merupakan salah satu upaya pemerintah Indonesia dalam
+        menangani masalah Covid-19. Vaksinasi Covid-19 bertujuan untuk menciptakan
+        kekebalan kelompok (herd immunity) agar masyarakat menjadi lebih produktif
+        dalam menjalankan aktivitas kesehariannya.
+      </p>
+      <p class="link">sumber: https://promkes.kemkes.go.id</p>    
+    </div>
+
+
+
+    <div>
+      <img src=https://djikp.kominfo.go.id/assets/upload/headline//media_sosial_.png class="ayo-vaksin-image">
+      <p class="center-text">Sumber: https://djikp.kominfo.go.id/assets/upload/headline//media_sosial_.png</p>
+    </div>
+
+
+
+    <h4 class="judul-statistik">Kasus Covid-19 Indonesia Perbulan</h4>
     
-  
-  <h1 > Website Covid-19 PBP-D05</h1>
 
-  <div class="informasi-Covid-19">
+    <div class="tabel-covid">
+      {% include "tabel_covid.html" %}
+    </div>
+    <a href="/beranda/add-data/" class="btn-add">edit statistik</a>
+
     
-    <h3 class="judul-Covid-19">Apa itu COVID-19?</h3>
-    <p class="text-Covid-19">
-      COVID-19 adalah penyakit menular yang disebabkan oleh jenis coronavirus
-      yang baru ditemukan. Virus baru dan penyakit yang disebabkannya ini tidak
-      dikenal sebelum mulainya wabah di Wuhan, Tiongkok, bulan Desember 2019.
-      COVID-19 ini sekarang menjadi sebuah pandemi yang terjadi di banyak negara
-      di seluruh dunia.
-    </p>
-    <p class="link-Covid-19">sumber: https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-for-public </p>    
+    <h4 class="judul-statistik">Persentase Vaksinasi Indonesia</h4>
+    <div class="chart-vaksin">
+      {% include "vaksin_charts.html" %}
+    </div>
   </div>
+</body>
 
-  <div class="informasi-Vaksin">
-    
-    <h3 class="judul-Vaksin">Apa itu Vaksinasi COVID-19?</h3>
-    <p class="text-Vaksin">
-      Vaksinasi Covid-19 merupakan salah satu upaya pemerintah Indonesia dalam
-      menangani masalah Covid-19. Vaksinasi Covid-19 bertujuan untuk menciptakan
-      kekebalan kelompok (herd immunity) agar masyarakat menjadi lebih produktif
-      dalam menjalankan aktivitas kesehariannya.
-    </p>
-    <p class="link-Vaksin">sumber: https://promkes.kemkes.go.id</p>    
-  </div>
-
-  <div >
-  <img src=https://djikp.kominfo.go.id/assets/upload/headline//media_sosial_.png class="ayo-vaksin-image">
-  <p class="center-text">Sumber: https://djikp.kominfo.go.id/assets/upload/headline//media_sosial_.png</p>
-  </div>
-    <!-- <a href="/beranda/add-information/" class="btn-add">add information</a> -->
-    <!-- <a href="/delete_information/{{information.id}}" class="btn-delete">Delete information</a> -->
-    <h4 class="center-text" >Kasus Covid-19 Indonesia Perbulan</h4>
-      <div class="tabel-covid">
-        {% include "tabel_covid.html" %} 
-      </div>
-
-          <a href="/beranda/add-data/" class="btn-add">edit statistik</a>
-
-          <div class="chart-vaksin">
-        {% include "vaksin_charts.html" %} 
-      </div>
-
-  </div>  
-  </body>
 </html>
 
 {% include "footer.html" %}
