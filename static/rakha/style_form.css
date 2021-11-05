@@ -12,6 +12,7 @@ td h2 {
 .container{
     width: 80%;
     margin: auto;
+    margin-top: 70px; /* biar ga kena navbar */
     padding-top: 25px;
     padding-bottom: 25px;
     display: flex;
