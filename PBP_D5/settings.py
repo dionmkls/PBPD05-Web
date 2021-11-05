@@ -93,7 +93,7 @@ DATABASES = {
 
 PRODUCTION = os.environ.get('DATABASE_URL') is not None
 if PRODUCTION:
-    DEBUG = False
+    DEBUG = True
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'tk-pbp-d05.herokuapp.com']
     DATABASES['default'] = dj_database_url.config()
     SECURE_SSL_REDIRECT = True
