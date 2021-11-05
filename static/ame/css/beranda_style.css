@@ -45,7 +45,7 @@ body {
     text-align: right;
 }
 
-.judul{
+.judul-info{
     font: bold;
     font-size: 40px;
 }
@@ -71,31 +71,10 @@ body {
 }
 
 .judul-statistik{
-    margin-top: 20px;
+    margin-top: 100px;
     text-align: center;
     font: bold;
     font-size: 40px;
 
 }
 
-.btn-add {
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-    background-color: #71b7e6;
-    border: 2px solid #71b7e6;
-    border-radius: 5px;
-    box-sizing: border-box;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-    padding: 8px;
-    font-size: 20px;
-
-    
-}
-
-.btn-add:hover {
-    color: #71b7e6;
-    background-color: white;
-}
