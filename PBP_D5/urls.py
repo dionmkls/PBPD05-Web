@@ -21,7 +21,8 @@ from faq.views import MainView, PostJsonListView, add_faq
 import beranda.urls as index_urls
 import vaksin.urls as vaksin_urls
 import apd.urls as apd_urls
-import faq.urls as faq_urls
+from faq.views import MainView, PostJsonListView
+# import forum.urls as forum_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
