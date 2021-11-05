@@ -11,19 +11,19 @@
 </head>
 <body>
   <!-- title -->
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid" style="height: 200px;">
     <div class="container">
       <h1 class="display-4 text-center" style="margin: 30px 0;">{{ page_title|default:"DP5 PBP" }}</h1>
-      <p class="lead">
+      <!-- <p class="lead">
         Di bawah ini adalah form untuk mengisi rumah sakit baru yang menyediakan ruang ICU atau kamar kosong untuk pasien.
-      </p>
+      </p> -->
     </div>
   </div>
     
   <div class="container">
     <a class="btn btn-outline-primary" href="/rumah-sakit/" style="margin-bottom: 50px;" role="button">Kembali</a>
 
-    <form method="POST" action="" onsubmit="alert('Rumah sakit berhasil ditambah')">
+    <form method="POST" action="" onsubmit="alert('Rumah sakit berhasil diedit')">
       {% csrf_token %}
 
       {% for form in rumah_sakit_form %}
@@ -34,7 +34,7 @@
       </div>
       {% endfor %}
 
-      <button type="submit" class="btn btn-outline-primary" style="margin-bottom: 20px;">Tambah</button>
+      <button type="submit" class="btn btn-outline-primary" style="margin-bottom: 20px;">Edit</button>
     </form>
   </div>
     
