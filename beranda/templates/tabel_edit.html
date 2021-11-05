@@ -1,4 +1,5 @@
 {% load static %}
+{% include "navbar.html" %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +11,14 @@
     <link rel="stylesheet" href="{% static 'ame\css\table_style.css' %}">
 </head>
 <body>
+  <h4 class="judul-statistik">Kasus Covid-19 Indonesia Perbulan</h4>
     <table class="content-table">
         <tr>
           <th>Bulan</th>
           <th>Tahun</th>
           <th>Penambahan Kasus Positif</th>
           <th>Kasus Positif Kumulatif</th>
+          <th>Edit</th>
         </tr>
           {% if CovidDatas %}
             {% for CovidData in CovidDatas %}
@@ -23,12 +26,22 @@
               <td>{{ CovidData.tahun }}</td>
               <td>{{ CovidData.penambahanKasusPositif }}</td>
               <td>{{ CovidData.PositifKumulatif }}</td>
+              <td class="edit_buttons">
+                <a href="{{CovidData.id}}/update" data-modal="#editModal" type="button-update" data-id="{{ note.id }}">Update</a>
+                <a href="{{CovidData.id}}/delete" data-modal="#deleteModal" type="button-delete" data-id="{{ note.id }}">Delete</a>
+              </td>
             </tr>  
             {% endfor %}
           {% endif %}
       </table>
+      
+      <a href="/beranda/add-covid-data/" class="btn-add">add new data</a>
 
-      <a href="/beranda/edit-covid-data/" class="btn-add">edit statik</a>
-    
+
+      <div id="form-update" class="modal">
+        {% include "covid_forms.html" %}
+      </div>
+      
+
 </body>
 </html>
