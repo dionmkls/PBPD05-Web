@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'oksigen',
     'forum',
     'apd',
-    'corsheaders',
+    # 'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -59,17 +59,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
+    # 'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000", # link flutter
-]
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:8000", # link flutter
+# ]
+# CORS_ALLOW_METHODS = [
+#     'GET',
+#     'POST',
+# ]
 
 ROOT_URLCONF = 'PBP_D5.urls'
 
