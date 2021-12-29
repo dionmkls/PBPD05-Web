@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'oksigen',
     'forum',
     'apd',
-    # 'corsheaders',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
