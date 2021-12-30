@@ -1,4 +1,6 @@
 from django.http import response
+from django.http.response import HttpResponse
+from django.core import serializers
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
 
@@ -79,3 +81,16 @@ def hapus_rs(request,id):
         return redirect('rs_index')
  
     return render(request, "rumah_sakit_hapus.html", response)
+
+
+# api
+
+def json_view(request):
+    rumah_sakit = RumahSakit.objects.all()
+    data = serializers.serialize('json', rumah_sakit)
+    return HttpResponse(data, content_type="application/json")
+
+def xml_view(request):
+    rumah_sakit = RumahSakit.objects.all()
+    data = serializers.serialize('xml', rumah_sakit)
+    return HttpResponse(data, content_type="application/xml")

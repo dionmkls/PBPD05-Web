@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
-from .views import index, add_rs, edit_rs, hapus_rs
+from .views import index, add_rs, edit_rs, hapus_rs, json_view, xml_view
 
 urlpatterns = [
     path('', index, name='rs_index'),
@@ -9,4 +9,8 @@ urlpatterns = [
     path('<id>/edit/', edit_rs),
     path('<id>/hapus/', hapus_rs),
     path('admin/login', auth_views.LoginView.as_view()),
+
+    # api url
+    path('api/json', json_view),
+    path('api/xml', xml_view),
 ]
