@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponseRedirect
 from django.http.response import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core import serializers
+from django.http import JsonResponse
+import json
 from .forms import APDForm
 from .models import APD
 
@@ -30,3 +32,26 @@ def add_apd(request):
 
     response['form'] = form
     return render(request, "apd_form.html", response)
+
+# Bagian flutter
+
+def json_flutter(request):
+    data = serializers.serialize('json', APD.objects.all())
+    return jsonResponse(data, safe=False)
+
+def add_apd_flutter(request):
+    body = json.loads(request.body)
+
+    jenis = body["jenis"]
+    url = body["url"]
+    harga = body["harga"]
+    gambar = body["gambar"]
+
+    new_data = APD(jenis = jenis, lokasi = url, harga = harga, img_source = gambar)
+
+    new_data.save()
+
+    return JsonResponse({
+        "message" : "berhasil"
+        "jenis" : jenis
+    }, safe = False)
