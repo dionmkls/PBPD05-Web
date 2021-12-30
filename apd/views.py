@@ -3,6 +3,7 @@ from django.http.response import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core import serializers
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 import json
 from .forms import APDForm
 from .models import APD
@@ -37,8 +38,9 @@ def add_apd(request):
 
 def json_flutter(request):
     data = serializers.serialize('json', APD.objects.all())
-    return jsonResponse(data, safe=False)
+    return JsonResponse(data, safe=False)
 
+@csrf_exempt
 def add_apd_flutter(request):
     body = json.loads(request.body)
 
@@ -52,6 +54,6 @@ def add_apd_flutter(request):
     new_data.save()
 
     return JsonResponse({
-        "message" : "berhasil"
-        "jenis" : jenis
+        "message" : "berhasil",
+        "jenis" : jenis,
     }, safe = False)
