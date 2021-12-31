@@ -3,6 +3,8 @@ from django.http.response import HttpResponse, JsonResponse
 from django.core import serializers
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 from .models import RumahSakit
 from .forms import RumahSakitForm
@@ -106,14 +108,11 @@ def flutter(request):
     if request.GET['to'] == "delete":
         return hapus_rs_f(request)
     elif request.GET['to'] == "edit":
-        return get_rs_id_f(request)
+        return get_rs_data(request)
     else:
-        return JsonResponse(data_to_array(), safe=False)
-
-def data_to_array():
-    rumah_sakit = RumahSakit.objects.all().values()
-    
-    return rumah_sakit
+        rumah_sakit = RumahSakit.objects.all()
+        data = serializers.serialize('json', rumah_sakit)
+        return JsonResponse(data, safe=False)
 
 def hapus_rs_f(request):
     idRS = request.GET['id']
@@ -129,9 +128,55 @@ def hapus_rs_f(request):
         'nama': nama,
     }, safe=False)
 
-def get_rs_id_f(request):
+def get_rs_data(request):
     idRS = request.GET['id']
 
     obj = get_object_or_404(RumahSakit, id = idRS)
+    data = serializers.serialize('json', obj)
 
-    return JsonResponse(obj, safe=False)
+    return JsonResponse(data, safe=False)
+
+@csrf_exempt
+def add_flutter(request):
+    body = json.loads(request.body)
+
+    nama = body["nama"]
+    lokasi = body["lokasi"]
+    alamat = body["alamat"]
+    url_gmaps = body["url_gmaps"]
+    no_telp = body["no_telp"]
+    tersedia = body["tersedia"]
+
+    dataFlutter = RumahSakit(nama = nama, lokasi = lokasi, alamat = alamat, url_gmaps = url_gmaps, no_telp = no_telp, tersedia = tersedia)
+
+    dataFlutter.save()
+    return JsonResponse({
+        'message': 'success',
+        'nama': nama,
+    }, safe=False)
+
+@csrf_exempt
+def edit_flutter(request):
+    idRS = request.GET['id']
+    body = json.loads(request.body)
+
+    nama = body["nama"]
+    lokasi = body["lokasi"]
+    alamat = body["alamat"]
+    url_gmaps = body["url_gmaps"]
+    no_telp = body["no_telp"]
+    tersedia = body["tersedia"]
+
+    obj = get_object_or_404(RumahSakit, id = idRS)
+    obj.nama = nama
+    obj.lokasi = lokasi
+    obj.alamat = alamat
+    obj.url_gmaps = url_gmaps
+    obj.no_telp = no_telp
+    obj.tersedia = tersedia
+
+    obj.save()
+    return JsonResponse({
+        'message': 'success',
+        'nama': nama,
+    }, safe=False)
