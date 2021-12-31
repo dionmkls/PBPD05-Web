@@ -15,7 +15,7 @@ urlpatterns = [
     path('api/xml/', xml_view),
 
     # flutter
-    path('flutter-rs', flutter),
+    path('flutter-rs/', flutter),
     path('flutter-add/', add_flutter),
     path('flutter-edit/', edit_flutter),
 ]

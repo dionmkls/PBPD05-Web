@@ -110,7 +110,7 @@ def flutter(request):
     elif request.GET['to'] == "edit":
         return get_rs_data(request)
     else:
-        rumah_sakit = RumahSakit.objects.all()
+        rumah_sakit = RumahSakit.objects.all().values()
         data = serializers.serialize('json', rumah_sakit)
         return JsonResponse(data, safe=False)
 
@@ -131,7 +131,7 @@ def hapus_rs_f(request):
 def get_rs_data(request):
     idRS = request.GET['id']
 
-    obj = get_object_or_404(RumahSakit, id = idRS)
+    obj = get_object_or_404(RumahSakit, id = idRS).values()
     data = serializers.serialize('json', obj)
 
     return JsonResponse(data, safe=False)
@@ -140,19 +140,19 @@ def get_rs_data(request):
 def add_flutter(request):
     body = json.loads(request.body)
 
-    nama = body["nama"]
-    lokasi = body["lokasi"]
-    alamat = body["alamat"]
-    url_gmaps = body["url_gmaps"]
-    no_telp = body["no_telp"]
-    tersedia = body["tersedia"]
+    nnama = body["nama"]
+    llokasi = body["lokasi"]
+    aalamat = body["alamat"]
+    uurl_gmaps = body["url_gmaps"]
+    nno_telp = body["no_telp"]
+    ttersedia = body["tersedia"]
 
-    dataFlutter = RumahSakit(nama = nama, lokasi = lokasi, alamat = alamat, url_gmaps = url_gmaps, no_telp = no_telp, tersedia = tersedia)
+    dataFlutter = RumahSakit(nama = nnama, lokasi = llokasi, alamat = aalamat, url_gmaps = uurl_gmaps, no_telp = nno_telp, tersedia = ttersedia)
 
     dataFlutter.save()
     return JsonResponse({
         'message': 'success',
-        'nama': nama,
+        'nama': nnama,
     }, safe=False)
 
 @csrf_exempt
