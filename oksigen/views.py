@@ -2,11 +2,17 @@ from django.shortcuts import render
 from .models import Oksigen
 from .forms import OksigenForm
 from django.http import HttpResponseRedirect
+from django.http.response import HttpResponse
+from django.core import serializers
 
 def index(request):
     oksigens = Oksigen.objects.all().values()
     response = {'oksigens': oksigens}
     return render(request, 'index.html', response)
+
+def json(request):
+    data = serializers.serialize('json', Oksigen.objects.all())
+    return HttpResponse(data, content_type="application/json")
 
 def add_oksigen(request):
     context ={}

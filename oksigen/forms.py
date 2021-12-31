@@ -10,19 +10,19 @@ class OksigenForm(forms.ModelForm):
         'required': 'Please Type'
     }
     url = {
-        'name' : 'url',
+        'name' : 'inputtext',
         'type' : 'text',
         'placeholder': 'masukkan data',
         'class': 'form-control col-sm-4'
     }
     alamat = {
-        'name': 'alamat',
+        'name': 'inputtext',
         'type' : 'text',
         'placeholder': 'masukkan data',
         'class': 'form-control col-sm-4'
     }
     telepon = {
-        'name': 'telepon',
+        'name': 'inputtext',
         'type' : 'text',
         'placeholder': 'masukkan data',
         'class': 'form-control col-sm-1'

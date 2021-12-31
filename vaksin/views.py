@@ -3,9 +3,65 @@ from .models import VaksinJakarta, VaksinBogor, VaksinDepok, VaksinTangerang, Va
 from .forms import FormJakarta, FormBogor, FormDepok, FormTangerang, FormBekasi
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
-def index2(request): #nampilin data pake ajax
+@csrf_exempt
+def add(request):
+    body = json.loads(request.body)
+    kkota = body["kota"]
+    nnama = body["nama"]
+    uurl = body["url"]
+    aalamat = body["alamat"]
+    ttelp = body["telp"]
+    jjenis = body["jenis"]
+    ssyarat = body["syarat"]
+    
+
+    if kkota == "Jakarta":
+        data = VaksinJakarta(nama= nnama, url= uurl, 
+                    alamat= aalamat, nomorTelp= ttelp,
+                    jenis= jjenis, syaratPeserta= ssyarat)
+    elif kkota == "Bogor":
+        data = VaksinBogor(nama= nnama, url= uurl, 
+                    alamat= aalamat, nomorTelp= ttelp,
+                    jenis= jjenis, syaratPeserta= ssyarat)
+    elif kkota == "Depok":
+        data = VaksinDepok(nama= nnama, url= uurl, 
+                    alamat= aalamat, nomorTelp= ttelp,
+                    jenis= jjenis, syaratPeserta= ssyarat)
+    elif kkota == "Tangerang":
+        data = VaksinTangerang(nama= nnama, url= uurl, 
+                    alamat= aalamat, nomorTelp= ttelp,
+                    jenis= jjenis, syaratPeserta= ssyarat)
+    else: # bekasi
+        data = VaksinBekasi(nama= nnama, url= uurl, 
+                    alamat= aalamat, nomorTelp= ttelp,
+                    jenis= jjenis, syaratPeserta= ssyarat)
+    
+    data.save()
+
+    return JsonResponse({
+                'message': 'success',
+                'nama': nnama,
+            }, safe=False)
+
+def index_flutter(request):
+    #bukan dari flutter
+    if request.GET['from'] != "flutter":
+        return JsonResponse({
+                'message': 'Denied',
+            }, safe=False)
+            
+    # tujuan, kota, id
+    if request.GET['tujuan'] == "delete":
+        return delete_vaksin(request)
+    else: # nampilin data
+        return JsonResponse(data_to_array(), safe=False)
+
+def index2(request): 
+    #nampilin data pake ajax
     if request.is_ajax():
         if request.GET['tujuan'] == "delete":
             print(request)
@@ -13,7 +69,7 @@ def index2(request): #nampilin data pake ajax
         else: # nampilin data
             print('tampil data')
             return JsonResponse(data_to_array(), safe=False)
-
+    
     if request.user.is_authenticated:
         return render(request, 'index_vaksin2.html', {})
     else:
@@ -55,7 +111,6 @@ def data_to_array():
 
     return arr_data
     
-
 def delete_vaksin(request):
      # ambil data yg mau diapus 
     kota = request.GET['kota']
@@ -79,14 +134,7 @@ def delete_vaksin(request):
 
     return JsonResponse({
         'nama': nama
-    })
-
-
-
-
-
-
-
+    }, safe=False)
     
 @login_required(login_url='/admin/login/')
 def add_jakarta(request):

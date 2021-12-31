@@ -2,7 +2,7 @@ const faqsBox = document.getElementById('faqs-box')
 const spinnerBox = document.getElementById('spinner-box')
 const loadBtn = document.getElementById('loadmoreBtn')
 const loadBox = document.getElementById('loading-box')
-let visible = 3
+let visible = 5
 
 const handleGetData = () => {
     $.ajax({
@@ -18,7 +18,6 @@ const handleGetData = () => {
                 data.map(faq => {
                     console.log(faq.id)
                     faqsBox.innerHTML += 
-                
                     `<div class="faq">
                         <div class="question">
                             <h3>${ faq.question }</h3>
@@ -35,7 +34,7 @@ const handleGetData = () => {
             }, 500)
             if(max_size) {
                 console.log('done')
-                // loadBox.innerHTML = 
+                // loadBox.innerHTML = "<h1>End of FAQ</h1>"
             }
         },
         error: function (error) {
@@ -47,6 +46,6 @@ const handleGetData = () => {
 handleGetData()
 
 loadBtn.addEventListener('click', () => {
-    visible += 3
+    visible += 5
     handleGetData()
 })

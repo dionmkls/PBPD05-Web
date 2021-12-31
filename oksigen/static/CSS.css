@@ -21,7 +21,6 @@ body {
 * {
   transition: all .65s ease;
   box-sizing: border-box;
-  
 }
 
 /* Centering Content  */
@@ -38,12 +37,9 @@ body {
 
 .site-title, h1, h2, h3 {
   font-family: 'Righteous', sans-serif;
-  font-size: 2em;
-  color: darken(var(--lightblue), 75%);
 }
 h3 {
-  font-size: em(32px);
-  color: desaturate(var(--salmon), 10%);
+  color: var(--salmon);
 }
 .site-title {
   color: white;

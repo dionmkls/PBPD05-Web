@@ -9,6 +9,7 @@ function required(){
         return false;
     }
     else{
+        alert("Data berhasil ditambahkan.");
         return true;
     }
 }

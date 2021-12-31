@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'oksigen',
     'forum',
     'apd',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,22 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
 
 ROOT_URLCONF = 'PBP_D5.urls'
 
@@ -93,7 +109,7 @@ DATABASES = {
 
 PRODUCTION = os.environ.get('DATABASE_URL') is not None
 if PRODUCTION:
-    DEBUG = False
+    DEBUG = True
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'tk-pbp-d05.herokuapp.com']
     DATABASES['default'] = dj_database_url.config()
     SECURE_SSL_REDIRECT = True
