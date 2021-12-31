@@ -16,7 +16,7 @@ def index(request):
 
     return render(request, 'apd_index.html', response)
 
-def json(request):
+def json_apd(request):
     data = serializers.serialize('json', APD.objects.all())
     return HttpResponse(data, content_type="application/json")
 
@@ -35,10 +35,6 @@ def add_apd(request):
     return render(request, "apd_form.html", response)
 
 # Bagian flutter
-
-def json_flutter(request):
-    data = serializers.serialize('json', APD.objects.all())
-    return JsonResponse(data, safe=False)
 
 @csrf_exempt
 def add_apd_flutter(request):
