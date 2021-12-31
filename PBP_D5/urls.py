@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 from beranda.views import index 
-from faq.views import MainView, PostJsonListView, add_faq
+from faq.views import MainView, PostJsonListView, add_faq, get_flutter
 
 import beranda.urls as index_urls
 import vaksin.urls as vaksin_urls
@@ -37,5 +37,6 @@ urlpatterns = [
     path('forum/', include('forum.urls')),
     path('rumah-sakit/', include('rumah_sakit.urls')),
     path('tempat-oksigen/', include('oksigen.urls')),
-    path('tempat-oksigen/json', include('oksigen.urls'))
+    path('tempat-oksigen/json', include('oksigen.urls')),
+    path('get-flutter', get_flutter, name='get_flutter')
 ]
