@@ -1,5 +1,5 @@
 from django.http import response
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, JsonResponse
 from django.core import serializers
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
@@ -94,3 +94,44 @@ def xml_view(request):
     rumah_sakit = RumahSakit.objects.all()
     data = serializers.serialize('xml', rumah_sakit)
     return HttpResponse(data, content_type="application/xml")
+
+# flutter
+
+def flutter(request):
+    if request.GET['from'] != "flutter": # dari flutter
+        return JsonResponse({
+            'message': 'Denied',
+        }, safe=False)
+
+    if request.GET['to'] == "delete":
+        return hapus_rs_f(request)
+    elif request.GET['to'] == "edit":
+        return get_rs_id_f(request)
+    else:
+        return JsonResponse(data_to_array(), safe=False)
+
+def data_to_array():
+    rumah_sakit = RumahSakit.objects.all().values()
+    
+    return rumah_sakit
+
+def hapus_rs_f(request):
+    idRS = request.GET['id']
+
+    obj = get_object_or_404(RumahSakit, id = idRS)
+
+    nama = obj.nama
+    print(nama + " berhasil di hapus")
+    # hapus object
+    obj.delete()
+
+    return JsonResponse({
+        'nama': nama,
+    }, safe=False)
+
+def get_rs_id_f(request):
+    idRS = request.GET['id']
+
+    obj = get_object_or_404(RumahSakit, id = idRS)
+
+    return JsonResponse(obj, safe=False)
