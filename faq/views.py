@@ -28,3 +28,7 @@ def add_faq(request):
 
     context['form'] = form
     return render(request, 'faq_form.html', context)
+
+def get_flutter():
+    faqs = list(FAQ.objects.values())
+    return JsonResponse({'data' : faqs})
